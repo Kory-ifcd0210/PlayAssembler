@@ -9,7 +9,45 @@
     <title>Play</title>
 </head>
 <body>
-    <button id="botonClick">Click</button>
+    <div id="score" class="active col-left">
+        <h1>Score</h1>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+    <section id="player">
+        <h1>Totem cat</h1>
+        <button id="startUser">Start</button>
+        <label>Choose your</label>
+        <input type="text" id="userName" placeholder="User Name">
+        <img class="col-right"><!-- foto gatitos portada -->
+    </section>
+    <section id="game1">
+        <button id="starButton">Start</button>
+        <button id="botonClick">Click</button>
         <p id="areaContador"></p>
+        <div id="displayCats">
+            <img><!-- foto gatitos juego, animación que cada 10 click se vea el gato siguiente -->
+        </div>
+    </section>
+    <section id="result1">
+        <h1>Totem cat</h1>
+        <label>Your Score in 10s</label>
+        <input type="text" class="scoreResult" readonly><!--Variable guardada de resultados-->
+        <nav>
+            <button>Play again</button>
+            <button>Level 2</button>
+        </nav>
+        <img class="col-right"><!-- foto gatitos portada -->
+    </section>
+    <section id="game2">
+        <button class="random"><img></button>
+        <img class="col-right"><!-- foto gatitos portada más pequeños -->
+    </section>
+    <section id="result2">
+        <h1>Totem cat</h1>
+        <label>Your Score in 10s</label>
+        <input type="text" class="scoreResult" readonly><!--Variable guardada de resultados-->
+    </section>
 </body>
 </html>
