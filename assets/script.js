@@ -1,7 +1,17 @@
+
+//Pasar de botón Start a botón Click
+var startGame1 = document.getElementById("starButton");
+var clickGame1= document.getElementById("botonClick");
+        startGame1.onclick=function(){
+            startGame1.classList.add("hidden");
+            clickGame1.classList.remove("hidden");
+        }
+
+//boton que cuenta los clicks
 var botonElement = document.getElementById("botonClick");
             var pElement = document.getElementById("areaContador");
-            var contador = 0;
+            var count = 0;
             botonElement.onclick = function () {
-                contador++;
-                pElement.textContent = contador;
+                count++;
+                pElement.textContent = count;
             }
