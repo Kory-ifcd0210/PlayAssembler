@@ -56,21 +56,30 @@
         <h1>Score</h1>
         <ul>
             <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
         </ul>
     </div>
     <section id="player">
-        <h1>Totem cat</h1>
-        <button id="startUser">Start</button>
-        <label>Choose your</label>
-        <input type="text" id="userName" placeholder="User Name">
-        <img class="col-right"><!-- foto gatitos portada -->
+        <div class="col-left">
+            <h1>Totem cat</h1>
+            <button id="startUser">Start</button>
+            <label>Choose your</label>
+            <input type="text" id="userName" placeholder="User Name">
+        </div>
+        <div class="col-right">
+        <img class="indexImg" src="assets\img\screen-1.jpg">
+        </div>
     </section>
     <section id="game1">
+        <div class="col-left">
         <button id="starButton">Start</button>
-        <button id="botonClick">Click</button>
+        <button id="botonClick" class="hidden">Click</button>
         <p id="areaContador"></p>
-        <div id="displayCats">
-            <img><!-- foto gatitos juego, animación que cada 10 click se vea el gato siguiente -->
+        </div>
+        <div id="displayCats" class="col-right">
+            <img src="assets\img\game1.jpg">
         </div>
     </section>
     <section id="result1">

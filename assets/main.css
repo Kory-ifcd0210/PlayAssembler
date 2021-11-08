@@ -1,3 +1,77 @@
+:root{
+    --main-color-bg: #fdc5c8ff;
+    --white:#fafafa;
+    --grey: #cbcac8ff;
+}
+
+/*Generic Styles*/
+body{
+    background-color: var(--main-color-bg);
+    margin: 0;
+    padding: 0;
+}
+
+.col-left{
+    width: 30%;
+    left: 0;
+}
+.col-right{
+    width: 30%;
+    right: 0;
+}
+
+.hidden{
+    display: none;
+}
+
+/*Score Style*/
+#score{
+    float: left;
+    background-color: var(--white);
+    width: 20%;
+    text-align: center;
+    height: 100vh;
+}
+
+#score ul li{
+    list-style: none;
+}
+
+/*Principal page*/
+#player {
+    display: flex;
+    height: 500px;
+}
+
+#player div{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+}
+
+.indexImg{
+    width: 100%;
+    object-fit: contain;
+}
+
+/*Game 1 Page*/
+#game1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellowgreen;
+}
+
+#displayCats{
+    background-color: yellow;
+    width: 30%;
+}
+
+#displayCats img{
+    width: 100%;
+}
+
 #areaContador {
     font-size: 40px;
     font-weight: bold;
