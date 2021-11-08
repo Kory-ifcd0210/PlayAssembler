@@ -5,6 +5,7 @@ var clickGame1 = document.getElementById("botonClick");
 startGame1.onclick = function () {
     startGame1.classList.add("hidden");
     clickGame1.classList.remove("hidden");
+    time = setTimeout(gameOver, 3000); //Temporizador juego
 };
 
 //boton que cuenta los clicks
@@ -12,20 +13,21 @@ var clickNum = document.getElementById("areaContador");
 var count = 0;
 var time;
 clickGame1.addEventListener("click", game1);
+
 function game1() {
     count++;
     clickNum.textContent = count;
-    time = setTimeout(gameOver, 3000); //Temporizador juego
+    console.log(count);
 };
 
 // función fin juego
-var score= count;
 var sectionGame= document.getElementById("game1");
-var content=document.createTextNode("Game Over");
 function gameOver(){
+    var score= count;
+    var content=document.createTextNode("Game Over " + "Your Score is" + score);
     clickGame1.removeEventListener("click", game1);
     sectionGame.appendChild(content);
-    console.log(score + "gameOver");
+    console.log(score+ " " + "gameOver");
 }
 
 /*cambio paginas*/
