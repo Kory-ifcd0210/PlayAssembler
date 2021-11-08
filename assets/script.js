@@ -58,13 +58,16 @@ const circulos = document.querySelectorAll(".circulo");
 const tabsy = document.querySelector(".tabsy");
 const anterior = document.getElementById("anterior");
 const siguiente = document.getElementById("siguiente");
+siguiente.addEventListener("click", afterPag);
 const tabby = document.querySelectorAll(".tabby");
 
-var goButton= document.getElementById("Go");
-goButton.addEventListener("click",siguientePag);
-siguiente.addEventListener("click", siguientePag);
+var goButton= document.getElementById("Go").addEventListener("click",afterPag);
 
-function siguientePag(){
+var playAgain= document.getElementById("again").addEventListener("click", beforePag);
+
+var nextLevel=document.getElementById("nextLevel").addEventListener("click", afterPag);
+
+function afterPag(){
     for (let i = 0; i < tabsy.childElementCount - 1; i++) {
         if (tabsy.children[i].classList.contains("active")) {
             addRemoveClass(tabsy.children, i, "active", true);
@@ -76,7 +79,8 @@ function siguientePag(){
     }
 };
 
-anterior.addEventListener("click", () => {
+anterior.addEventListener("click", beforePag);
+function beforePag(){
     for (let i = 0; i < tabsy.childElementCount; i++) {
         if (tabsy.children[i].classList.contains("active")) {
             addRemoveClass(tabsy.children, i, "active", false);
@@ -86,7 +90,7 @@ anterior.addEventListener("click", () => {
             return;
         }
     }
-});
+};
 
 function addRemoveClass(element, i, classToChange, isNext) {
     if (isNext) {
