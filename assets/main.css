@@ -4,3 +4,52 @@
     font-family: impact;
     margin: 10px;
 }
+
+
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: aqua;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+main {
+    padding-left: 142px;
+    padding-right: 142px;
+}
+
+.pages {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 50px 30px;
+    border-radius: 8px;
+    background-color: #FFF;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pages .page {
+    display: none;
+}
+
+.pages .page.is-active {
+    display: block;
+
+}
+
+.tabby{
+    display: none;
+}
+.tabby.is-active{
+    display: block;
+}
+
+.contenedor {
+
+    display: none;
+}
