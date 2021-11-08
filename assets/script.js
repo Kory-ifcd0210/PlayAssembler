@@ -21,13 +21,24 @@ function game1() {
 };
 
 // función fin juego
+var containerLeft= document.getElementById("containerLeft");
 var sectionGame= document.getElementById("game1");
 function gameOver(){
-    var score= count;
-    var content=document.createTextNode("Game Over " + "Your Score is" + score);
-    clickGame1.removeEventListener("click", game1);
-    sectionGame.appendChild(content);
-    console.log(score+ " " + "gameOver");
+    var score= count; //guarda la variable de score
+    clickGame1.removeEventListener("click", game1); //el boton click deja de funcionar
+
+    //creación de nuevos elementos HTML para pantalla de Game Over
+    containerLeft.remove();
+    var newContainerLeft= document.createElement("div");
+    var newDiv=document.createElement("p");
+    var content=document.createTextNode("Game Over");
+    var contentScore= document.createTextNode("Your Score: " + score + " clicks");
+    sectionGame.appendChild(newContainerLeft);
+    newContainerLeft.classList.add("col-left");
+    newContainerLeft.appendChild(newDiv);
+    newDiv.appendChild(content, contentScore);
+    newDiv.appendChild(contentScore);
+    console.log(contentScore);
 }
 
 /*cambio paginas*/
