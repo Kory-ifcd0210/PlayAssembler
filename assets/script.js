@@ -1,3 +1,9 @@
+//Objeto Gamer
+const User= {
+    name: "",
+    score: 0,
+}
+
 
 //Pasar de botón Start a botón Click
 var startGame1 = document.getElementById("starButton");
@@ -54,7 +60,11 @@ const anterior = document.getElementById("anterior");
 const siguiente = document.getElementById("siguiente");
 const tabby = document.querySelectorAll(".tabby");
 
-siguiente.addEventListener("click", () => {
+var goButton= document.getElementById("Go");
+goButton.addEventListener("click",siguientePag);
+siguiente.addEventListener("click", siguientePag);
+
+function siguientePag(){
     for (let i = 0; i < tabsy.childElementCount - 1; i++) {
         if (tabsy.children[i].classList.contains("active")) {
             addRemoveClass(tabsy.children, i, "active", true);
@@ -64,7 +74,7 @@ siguiente.addEventListener("click", () => {
             return;
         }
     }
-});
+};
 
 anterior.addEventListener("click", () => {
     for (let i = 0; i < tabsy.childElementCount; i++) {
@@ -88,20 +98,18 @@ function addRemoveClass(element, i, classToChange, isNext) {
     }
 }
 
-/*game 2*/ 
+/*game 2*/
 
+function moveElmRand(elm){
+    elm.style.position ='absolute';
+    elm.style.top = Math.floor(Math.random()*90+5)+'%';
+    elm.style.left = Math.floor(Math.random()*90+5)+'%';
+}
 
-function moveElmRand(elm){ 
-    elm.style.position ='absolute'; 
-    elm.style.top = Math.floor(Math.random()*90+5)+'%'; 
-    elm.style.left = Math.floor(Math.random()*90+5)+'%'; 
-   } 
-    
-   //get the #btn_test 
-   var btn_test = document.querySelector('#btn_test'); 
-    
-   //register to call moveElmRand() on mouseenter event to #btn_test 
-   btn_test.addEventListener('mouseenter', function(e){ moveElmRand(e.target);}); 
-    
-   //register click to #btn_test 
-   btn_test.addEventListener('click', function(e){ alert('You are Good.');});
+   //get the #btn_test
+    var btn_test = document.querySelector('#btn_test');
+   //register to call moveElmRand() on mouseenter event to #btn_test
+    btn_test.addEventListener('mouseenter', function(e){ moveElmRand(e.target);});
+
+   //register click to #btn_test
+    btn_test.addEventListener('click', function(e){ alert('You are Good.');});

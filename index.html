@@ -29,26 +29,21 @@
         </ul>
     </div>
     <section class="tabby is-active">
-        <div class="pagey is-active" data-pagey="1">
-            <h2>Principal</h2>
-            <section id="player">
-                <div class="col-left">
+        <div id="player" class="pagey is-active" data-pagey="1">
+                <div class="col-left userStart">
                     <h1>Totem cat</h1>
-                    <button id="startUser">Start</button>
-                    <label>Choose your</label>
+                    <button id="Go">Go!</button>
+                    <p>Choose your</p>
                     <input type="text" id="userName" placeholder="User Name">
                 </div>
                 <div class="col-right">
                 <img class="indexImg" src="assets\img\screen-1.jpg">
                 </div>
-            </section>
         </div>
     </section>
     <section class="tabby">
-        <div class="pagey" data-pagey="2">
-            <h2>JUEGO 1</h2>
-            <section id="game1">
-                <div class="col-left" id="containerLeft">
+        <div id="game1" class="pagey" data-pagey="2">
+            <div class="col-left" id="containerLeft">
                     <button id="starButton">Start</button>
                     <button id="botonClick" class="hidden">Click</button>
                     <p id="areaContador"></p>
@@ -56,13 +51,10 @@
                 <div id="displayCats" class="col-right">
                     <img src="assets\img\game1.jpg">
                 </div>
-            </section>
         </div>
     </section>
     <section class="tabby">
-        <div class="pagey" data-pagey="3">
-            <h2>Resultado</h2>
-            <section id="result1">
+        <div id="result1" class="pagey" data-pagey="3">
                 <h1>Totem cat</h1>
                 <label>Your Score in 10s</label>
                 <input type="text" class="scoreResult" readonly><!--Variable guardada de resultados-->
@@ -71,27 +63,20 @@
                     <button>Level 2</button>
                 </nav>
                 <img class="col-right"><!-- foto gatitos portada -->
-            </section>
         </div>
     </section>
     <section class="tabby">
-        <div class="pagey" data-pagey="4">
-            <h2>Juego 2</h2>
-            <section id="game2">
-                <button class="random"><img></button>
+        <div id="game2" class="pagey" data-pagey="4">
+            <button class="random"><img></button>
                 <img class="col-right"><!-- foto gatitos portada más pequeños -->
-                <button id='btn_test'>Catch Me</button> 
-            </section>
+                <button id='btn_test'>Catch Me</button>
         </div>
     </section>
     <section class="tabby">
-        <div class="pagey" data-pagey="5">
-            <h2>Resultado2</h2>
-            <section id="result2">
+        <div  id="result2" class="pagey" data-pagey="5">
                 <h1>Totem cat</h1>
                 <label>Your Score in 10s</label>
                 <input type="text" class="scoreResult" readonly><!--Variable guardada de resultados-->
-            </section>
         </div>
     </section>
 

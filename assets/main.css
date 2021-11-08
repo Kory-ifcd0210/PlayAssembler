@@ -95,6 +95,16 @@ main {
     object-fit: contain;
 }
 
+/*Style principal page*/
+#player{
+    text-align: center;
+    align-items: center;
+}
+
+.userStart{
+    border: 1px solid beige;
+}
+
 /*Game 1 Page*/
 #game1{
     display: flex;
