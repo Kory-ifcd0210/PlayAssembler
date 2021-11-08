@@ -11,7 +11,7 @@ var clickGame1 = document.getElementById("botonClick");
 startGame1.onclick = function () {
     startGame1.classList.add("hidden");
     clickGame1.classList.remove("hidden");
-    time = setTimeout(gameOver, 3000); //Temporizador juego
+    time = setTimeout(gameOver, 10000); //Temporizador juego
 };
 
 //boton que cuenta los clicks
@@ -102,18 +102,48 @@ function addRemoveClass(element, i, classToChange, isNext) {
     }
 }
 
-/*game 2*/
+/*game 2*/ 
 
-function moveElmRand(elm){
-    elm.style.position ='absolute';
-    elm.style.top = Math.floor(Math.random()*90+5)+'%';
-    elm.style.left = Math.floor(Math.random()*90+5)+'%';
+var b = document.getElementById("btntest");
+b.addEventListener("click",change);
+function change()
+{
+    var i = Math.floor(Math.random()*500)+1;
+    var j = Math.floor(Math.random()*500)+1;
+    b.style.left = i+"px";
+    b.style.top = j+"px";
 }
 
-   //get the #btn_test
-    var btn_test = document.querySelector('#btn_test');
-   //register to call moveElmRand() on mouseenter event to #btn_test
-    btn_test.addEventListener('mouseenter', function(e){ moveElmRand(e.target);});
 
-   //register click to #btn_test
-    btn_test.addEventListener('click', function(e){ alert('You are Good.');});
+
+
+/* game 3
+function moveElmRand(elm){ 
+    elm.style.position ='absolute'; 
+    elm.style.top = Math.floor(Math.random()*90+5)+'%'; 
+    elm.style.left = Math.floor(Math.random()*90+5)+'%'; 
+   } 
+    
+   //get the #btn_test 
+   var btn_test = document.querySelector('#btn_test'); 
+    
+   //register to call moveElmRand() on mouseenter event to #btn_test 
+   btn_test.addEventListener('mouseenter', function(e){ moveElmRand(e.target);}); 
+    
+   //register click to #btn_test 
+   btn_test.addEventListener('click', function(e){ alert('You are Good.');});
+
+
+   var startGame1 = document.getElementById("starButton");
+   var clickGame1 = document.getElementById("botonClick");
+   startGame1.onclick = function () {
+       startGame1.classList.add("hidden");
+       clickGame1.classList.remove("hidden");
+       time = setTimeout(gameOver, 10000); //Temporizador juego
+   };
+
+ */
+
+
+
+
