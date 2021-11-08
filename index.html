@@ -21,11 +21,8 @@
     </div>
     <div id="score" class=" col-left">
         <h1>Score</h1>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+        <ul id="ulScore">
+            
         </ul>
     </div>
     <section class="tabby is-active">
@@ -34,7 +31,7 @@
                     <h1>Totem cat</h1>
                     <button id="Go">Go!</button>
                     <p>Choose your</p>
-                    <input type="text" id="userName" placeholder="User Name">
+                    <input type="text" id="userName" placeholder="User Name" value="">
                 </div>
                 <div class="col-right">
                 <img class="indexImg" src="assets\img\screen-1.jpg">
@@ -56,7 +53,8 @@
     <section class="tabby">
         <div id="result1" class="pagey" data-pagey="3">
                 <h1>Totem cat</h1>
-                <label>Your Score in 10s</label>
+                <p>Game Over</p>
+                <p>Your Score in 10s</p>
                 <input type="text" class="scoreResult" readonly><!--Variable guardada de resultados-->
                 <nav>
                     <button id="again">Play again</button>
@@ -68,7 +66,8 @@
     <section class="tabby">
         <div id="game2" class="pagey" data-pagey="4">
                 <img class="col-right"><!-- foto gatitos portada más pequeños -->
-                <button id='btn_test'>Catch Me</button>
+                <button id="starButton2">Start</button>
+                <button id='btntest' class="hidden">Catch Me</button>
         </div>
     </section>
     <section class="tabby">
@@ -85,12 +84,5 @@
                 </div>
 
     </section>
-
-    
-   
-    
-    
-    
-    
 </body>
 </html>
