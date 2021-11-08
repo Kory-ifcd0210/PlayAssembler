@@ -30,14 +30,17 @@ function gameOver(){
     //creación de nuevos elementos HTML para pantalla de Game Over
     containerLeft.remove();
     var newContainerLeft= document.createElement("div");
-    var newDiv=document.createElement("p");
+    var newP=document.createElement("p");
+    var newP2=document.createElement("p");
     var content=document.createTextNode("Game Over");
     var contentScore= document.createTextNode("Your Score: " + score + " clicks");
-    sectionGame.appendChild(newContainerLeft);
+    sectionGame.prepend(newContainerLeft);
+    newContainerLeft.setAttribute("id","areaContador");
     newContainerLeft.classList.add("col-left");
-    newContainerLeft.appendChild(newDiv);
-    newDiv.appendChild(content, contentScore);
-    newDiv.appendChild(contentScore);
+    newContainerLeft.appendChild(newP);
+    newContainerLeft.appendChild(newP2);
+    newP.appendChild(content, contentScore);
+    newP2.appendChild(contentScore);
     console.log(contentScore);
 }
 

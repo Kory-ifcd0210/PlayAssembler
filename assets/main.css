@@ -24,12 +24,12 @@ main {
 }
 
 .col-left{
+    float: left;
     width: 30%;
-    left: 0;
 }
 .col-right{
+    float: right;
     width: 30%;
-    right: 0;
 }
 
 .hidden{
@@ -100,11 +100,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: yellowgreen;
 }
 
 #displayCats{
-    background-color: yellow;
     width: 30%;
 }
 
