@@ -1,3 +1,9 @@
+//Objeto Gamer
+const User= {
+    name: "",
+    score: 0,
+}
+
 
 //Pasar de botón Start a botón Click
 var startGame1 = document.getElementById("starButton");
@@ -54,7 +60,11 @@ const anterior = document.getElementById("anterior");
 const siguiente = document.getElementById("siguiente");
 const tabby = document.querySelectorAll(".tabby");
 
-siguiente.addEventListener("click", () => {
+var goButton= document.getElementById("Go");
+goButton.addEventListener("click",siguientePag);
+siguiente.addEventListener("click", siguientePag);
+
+function siguientePag(){
     for (let i = 0; i < tabsy.childElementCount - 1; i++) {
         if (tabsy.children[i].classList.contains("active")) {
             addRemoveClass(tabsy.children, i, "active", true);
@@ -64,7 +74,7 @@ siguiente.addEventListener("click", () => {
             return;
         }
     }
-});
+};
 
 anterior.addEventListener("click", () => {
     for (let i = 0; i < tabsy.childElementCount; i++) {
