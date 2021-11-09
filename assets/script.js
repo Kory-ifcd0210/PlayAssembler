@@ -4,13 +4,6 @@ const User= {
     score: 0,
 }
 
-var goButton= document.getElementById("Go").addEventListener("click",afterPag);
-document.getElementById("Go").addEventListener("click",setObject);
-//Introduce el usuario
-var userName=document.getElementById("userName");
-function setObject(){
-    User.name=userName.value;
-}
 
 //Pasar de botón Start a botón Click game1
 var startGame1 = document.getElementById("starButton");
@@ -101,13 +94,6 @@ function addRemoveClass(element, i, classToChange, isNext) {
 /*game 2*/
 var b = document.getElementById("btntest");
 
-var startGame2 = document.getElementById("starButton2");
-startGame2.onclick = function() {
-    startGame2.classList.add("hidden");
-    b.classList.remove("hidden");
-    time = setTimeout(gameOver, 10000); //Temporizador juego
-};
-
 b.addEventListener("click",change);
 function change(){
     var i = Math.floor(Math.random()*500)+1;
@@ -117,7 +103,7 @@ function change(){
 }
 
 
-var startGame2 = document.getElementById("starButton");
+var startGame2 = document.getElementById("starButton2");
 var clickGame2 = document.getElementById("btntest");
 startGame2.onclick = function () {
     startGame2.classList.add("hidden");
@@ -126,10 +112,10 @@ startGame2.onclick = function () {
 };
 
 //boton que cuenta los clicks
-var clickNum = document.getElementById("areaContador");
+var clickNum = document.getElementById("areaContador2");
 var count = 0;
 var time;
-clickGame2.addEventListener("click", game1);
+clickGame2.addEventListener("click", game2);
 
 function game2() {
     count++;
@@ -164,6 +150,17 @@ function moveElmRand(elm){
 
  */
 
+var goButton= document.getElementById("Go").addEventListener("click",setObject);
 
-
-
+//Introduce el usuario
+var userName=document.getElementById("userName");
+function setObject(){
+        if (userName.value == "") {
+          alert("Name must be filled out");
+          return false;
+        }
+        else { 
+            User.name=userName.value;
+            afterPag();
+        }
+      }
