@@ -29,14 +29,12 @@ startGame1.onclick = function () {
 };
 
 //boton que cuenta los clicks
-var clickNum = document.getElementById("areaContador");
 var count = 0;
 var time;
 clickGame1.addEventListener("click", contador);
 
 function contador() {
     count++;
-    clickNum.textContent = count;
 };
 
 var scoreResult = document.querySelector(".scoreResult");
