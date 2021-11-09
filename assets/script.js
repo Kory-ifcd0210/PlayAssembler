@@ -111,7 +111,25 @@ function change()
 }
 
 
+var startGame2 = document.getElementById("starButton");
+var clickGame2 = document.getElementById("btntest");
+startGame2.onclick = function () {
+    startGame2.classList.add("hidden");
+    clickGame2.classList.remove("hidden");
+    time = setTimeout(gameOver, 10000); //Temporizador juego
+};
 
+//boton que cuenta los clicks
+var clickNum = document.getElementById("areaContador");
+var count = 0;
+var time;
+clickGame2.addEventListener("click", game1);
+
+function game2() {
+    count++;
+    clickNum.textContent = count;
+    console.log(count);
+};
 
 /* game 3
 function moveElmRand(elm){ 
