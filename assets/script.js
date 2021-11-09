@@ -1,14 +1,28 @@
 //Objeto Gamer
-const User= {
+const User = {
     name: "",
     score: 0,
 }
 
+//Introducir nuevo usuario
+var goButton = document.getElementById("Go").addEventListener("click", setObject);
+
+var userName = document.getElementById("userName");
+
+function setObject() {
+    if (userName.value == "") {
+        alert("Name must be filled out");
+        return false;
+    } else {
+        User.name = userName.value;
+        afterPag();
+    }
+}
 
 //Pasar de botón Start a botón Click game1
 var startGame1 = document.getElementById("starButton");
 var clickGame1 = document.getElementById("botonClick");
-startGame1.onclick = function() {
+startGame1.onclick = function () {
     startGame1.classList.add("hidden");
     clickGame1.classList.remove("hidden");
     time = setTimeout(gameOver, 2000); //Temporizador juego
@@ -25,21 +39,24 @@ function contador() {
     clickNum.textContent = count;
 };
 
-var scoreResult=document.querySelector(".scoreResult");
+var scoreResult = document.querySelector(".scoreResult");
 // función fin juego
-function gameOver(){
-    var score= count; //guarda la variable de score
-    User.score=score; // añade el valor de score al parámetro del objeto
-    scoreResult.value=User.score + " points";
-    var gamers=document.getElementById("ulScore");
-    gamers.innerHTML=gamers.innerHTML + "<li>" + User.name + " - " + User.score + "</li>";
+function gameOver() {
+    var score = count; //guarda la variable de score
+    User.score = score; // añade el valor de score al parámetro del objeto
+    scoreResult.value = User.score + " points";
+    var gamers = document.getElementById("ulScore");
+    gamers.innerHTML = gamers.innerHTML + "<li>" + User.name + " => " + User.score + "</li>";
     afterPag();
 }
 
 /*Funcion Play Again*/
-var playAgain= document.getElementById("again").addEventListener("click", again);
-function again(){
-    count=0;
+var playAgain = document.getElementById("again").addEventListener("click", again);
+
+function again() {
+    count = 0;
+    startGame1.classList.remove("hidden");
+    clickGame1.classList.add("hidden");
     beforePag();
 }
 
@@ -52,11 +69,11 @@ const anterior = document.getElementById("anterior");
 const siguiente = document.getElementById("siguiente").addEventListener("click", afterPag);
 const tabby = document.querySelectorAll(".tabby");
 
-var nextLevel=document.getElementById("nextLevel").addEventListener("click", afterPag);
+var nextLevel = document.getElementById("nextLevel").addEventListener("click", afterPag);
 
 
 
-function afterPag(){
+function afterPag() {
     for (let i = 0; i < tabsy.childElementCount - 1; i++) {
         if (tabsy.children[i].classList.contains("active")) {
             addRemoveClass(tabsy.children, i, "active", true);
@@ -69,7 +86,8 @@ function afterPag(){
 };
 
 anterior.addEventListener("click", beforePag);
-function beforePag(){
+
+function beforePag() {
     for (let i = 0; i < tabsy.childElementCount; i++) {
         if (tabsy.children[i].classList.contains("active")) {
             addRemoveClass(tabsy.children, i, "active", false);
@@ -94,12 +112,13 @@ function addRemoveClass(element, i, classToChange, isNext) {
 /*game 2*/
 var b = document.getElementById("btntest");
 
-b.addEventListener("click",change);
-function change(){
-    var i = Math.floor(Math.random()*500)+1;
-    var j = Math.floor(Math.random()*500)+1;
-    b.style.left = i+"px";
-    b.style.top = j+"px";
+b.addEventListener("click", change);
+
+function change() {
+    var i = Math.floor(Math.random() * 500) + 1;
+    var j = Math.floor(Math.random() * 500) + 1;
+    b.style.left = i + "px";
+    b.style.top = j + "px";
 }
 
 
@@ -111,17 +130,9 @@ startGame2.onclick = function () {
     time = setTimeout(gameOver, 10000); //Temporizador juego
 };
 
-//boton que cuenta los clicks
+//boton que cuenta los clicks Game2
 var clickNum = document.getElementById("areaContador2");
-var count = 0;
-var time;
-clickGame2.addEventListener("click", game2);
-
-function game2() {
-    count++;
-    clickNum.textContent = count;
-    console.log(count);
-};
+clickGame2.addEventListener("click", contador);
 
 /* game 3
 function moveElmRand(elm){
@@ -149,18 +160,3 @@ function moveElmRand(elm){
    };
 
  */
-
-var goButton= document.getElementById("Go").addEventListener("click",setObject);
-
-//Introduce el usuario
-var userName=document.getElementById("userName");
-function setObject(){
-        if (userName.value == "") {
-          alert("Name must be filled out");
-          return false;
-        }
-        else { 
-            User.name=userName.value;
-            afterPag();
-        }
-      }
