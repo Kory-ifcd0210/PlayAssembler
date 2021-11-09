@@ -4,67 +4,66 @@ const User= {
     score: 0,
 }
 
+var goButton= document.getElementById("Go").addEventListener("click",afterPag);
+document.getElementById("Go").addEventListener("click",setObject);
+//Introduce el usuario
+var userName=document.getElementById("userName");
+function setObject(){
+    User.name=userName.value;
+}
 
-//Pasar de botón Start a botón Click
+//Pasar de botón Start a botón Click game1
 var startGame1 = document.getElementById("starButton");
 var clickGame1 = document.getElementById("botonClick");
-startGame1.onclick = function () {
+startGame1.onclick = function() {
     startGame1.classList.add("hidden");
     clickGame1.classList.remove("hidden");
-    time = setTimeout(gameOver, 10000); //Temporizador juego
+    time = setTimeout(gameOver, 2000); //Temporizador juego
 };
 
 //boton que cuenta los clicks
 var clickNum = document.getElementById("areaContador");
 var count = 0;
 var time;
-clickGame1.addEventListener("click", game1);
+clickGame1.addEventListener("click", contador);
 
-function game1() {
+function contador() {
     count++;
     clickNum.textContent = count;
-    console.log(count);
 };
 
+var scoreResult=document.querySelector(".scoreResult");
 // función fin juego
-var containerLeft= document.getElementById("containerLeft");
-var sectionGame= document.getElementById("game1");
 function gameOver(){
     var score= count; //guarda la variable de score
-    clickGame1.removeEventListener("click", game1); //el boton click deja de funcionar
+    User.score=score; // añade el valor de score al parámetro del objeto
+    scoreResult.value=User.score + " points";
+    var gamers=document.getElementById("ulScore");
+    gamers.innerHTML=gamers.innerHTML + "<li>" + User.name + " - " + User.score + "</li>";
+    afterPag();
+}
 
-    //creación de nuevos elementos HTML para pantalla de Game Over
-    containerLeft.remove();
-    var newContainerLeft= document.createElement("div");
-    var newP=document.createElement("p");
-    var newP2=document.createElement("p");
-    var content=document.createTextNode("Game Over");
-    var contentScore= document.createTextNode("Your Score: " + score + " clicks");
-    sectionGame.prepend(newContainerLeft);
-    newContainerLeft.setAttribute("id","areaContador");
-    newContainerLeft.classList.add("col-left");
-    newContainerLeft.appendChild(newP);
-    newContainerLeft.appendChild(newP2);
-    newP.appendChild(content, contentScore);
-    newP2.appendChild(contentScore);
-    console.log(contentScore);
+/*Funcion Play Again*/
+var playAgain= document.getElementById("again").addEventListener("click", again);
+function again(){
+    count=0;
+    beforePag();
 }
 
 /*cambio paginas*/
 
 const sectionPages = document.querySelector(".pages");
-
 const circulos = document.querySelectorAll(".circulo");
 const tabsy = document.querySelector(".tabsy");
 const anterior = document.getElementById("anterior");
-const siguiente = document.getElementById("siguiente");
+const siguiente = document.getElementById("siguiente").addEventListener("click", afterPag);
 const tabby = document.querySelectorAll(".tabby");
 
-var goButton= document.getElementById("Go");
-goButton.addEventListener("click",siguientePag);
-siguiente.addEventListener("click", siguientePag);
+var nextLevel=document.getElementById("nextLevel").addEventListener("click", afterPag);
 
-function siguientePag(){
+
+
+function afterPag(){
     for (let i = 0; i < tabsy.childElementCount - 1; i++) {
         if (tabsy.children[i].classList.contains("active")) {
             addRemoveClass(tabsy.children, i, "active", true);
@@ -76,7 +75,8 @@ function siguientePag(){
     }
 };
 
-anterior.addEventListener("click", () => {
+anterior.addEventListener("click", beforePag);
+function beforePag(){
     for (let i = 0; i < tabsy.childElementCount; i++) {
         if (tabsy.children[i].classList.contains("active")) {
             addRemoveClass(tabsy.children, i, "active", false);
@@ -86,7 +86,7 @@ anterior.addEventListener("click", () => {
             return;
         }
     }
-});
+};
 
 function addRemoveClass(element, i, classToChange, isNext) {
     if (isNext) {
@@ -98,12 +98,18 @@ function addRemoveClass(element, i, classToChange, isNext) {
     }
 }
 
-/*game 2*/ 
-
+/*game 2*/
 var b = document.getElementById("btntest");
+
+var startGame2 = document.getElementById("starButton2");
+startGame2.onclick = function() {
+    startGame2.classList.add("hidden");
+    b.classList.remove("hidden");
+    time = setTimeout(gameOver, 10000); //Temporizador juego
+};
+
 b.addEventListener("click",change);
-function change()
-{
+function change(){
     var i = Math.floor(Math.random()*500)+1;
     var j = Math.floor(Math.random()*500)+1;
     b.style.left = i+"px";
@@ -132,19 +138,19 @@ function game2() {
 };
 
 /* game 3
-function moveElmRand(elm){ 
-    elm.style.position ='absolute'; 
-    elm.style.top = Math.floor(Math.random()*90+5)+'%'; 
-    elm.style.left = Math.floor(Math.random()*90+5)+'%'; 
-   } 
-    
-   //get the #btn_test 
-   var btn_test = document.querySelector('#btn_test'); 
-    
-   //register to call moveElmRand() on mouseenter event to #btn_test 
-   btn_test.addEventListener('mouseenter', function(e){ moveElmRand(e.target);}); 
-    
-   //register click to #btn_test 
+function moveElmRand(elm){
+    elm.style.position ='absolute';
+    elm.style.top = Math.floor(Math.random()*90+5)+'%';
+    elm.style.left = Math.floor(Math.random()*90+5)+'%';
+}
+
+   //get the #btn_test
+   var btn_test = document.querySelector('#btn_test');
+
+   //register to call moveElmRand() on mouseenter event to #btn_test
+   btn_test.addEventListener('mouseenter', function(e){ moveElmRand(e.target);});
+
+   //register click to #btn_test
    btn_test.addEventListener('click', function(e){ alert('You are Good.');});
 
 
