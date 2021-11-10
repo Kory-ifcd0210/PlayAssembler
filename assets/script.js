@@ -1,3 +1,18 @@
+const pages = { 
+    page1: {
+        startGame: document.getElementById("starButton"),
+        clickGame: document.getElementById("botonClick"),
+        clickNum: document.getElementById("areaContador"),
+        scoreResult: document.getElementById("scoreResult"),
+    },
+    page2: {
+        startGame: document.getElementById("starButton2"),
+        clickGame: document.getElementById("btntest"),
+        clickNum: document.getElementById("areaContador2"),
+        scoreResult: document.getElementById("scoreResult2"),
+    },
+};
+
 //Objeto Gamer
 const User = {
     name: "",
