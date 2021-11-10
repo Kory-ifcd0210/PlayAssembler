@@ -1,11 +1,65 @@
+const pages = {
+    page1: {
+        startGame: document.getElementById("starButton"),
+        clickGame: document.getElementById("botonClick"),
+        clickNum: document.getElementById("areaContador"),
+        scoreResult: document.getElementById("scoreResult"),
+    },
+    page2: {
+        startGame: document.getElementById("starButton2"),
+        clickGame: document.getElementById("btntest"),
+        clickNum: document.getElementById("areaContador2"),
+        scoreResult: document.getElementById("scoreResult2"),
+    },
+};
+
 //Objeto Gamer
 const User = {
     name: "",
     score: 0,
+};
+
+
+window.onload =chargeData;
+
+function chargeData(){
+    displayScore= [];
+    let objStorage = window.localStorage;
+    var data=objStorage.getItem('objectinArray');
+    var dataFormated=JSON.parse(data);
+    var gamers = document.getElementById("ulScore");
+    gamers.innerHTML = "";
+    dataFormated.sort(function(a,b){
+        return b.score-a.score;
+    });
+    for(var i in dataFormated)
+    {
+        gamers.innerHTML =
+        gamers.innerHTML + "<li>" + dataFormated[i].name   +"-"+dataFormated[i].score+ "</li>";
+        displayScore.push(dataFormated[i]);
+    }    
 }
 
+//localStorage
+let displayScore = [];
+
+let objStorage = window.localStorage;
+function againagain() {
+    if(displayScore.filter(x=> x.name ==User.name && x.score == User.score).length <1)
+    {
+        displayScore.push(User);
+    }
+    let objectInArray = JSON.stringify(displayScore);
+    objStorage.setItem("objectinArray", objectInArray);
+    console.log(User);
+    chargeData();
+}
+
+
 //Introducir nuevo usuario
-var goButton = document.getElementById("Go").addEventListener("click", setObject);
+var goButton = document
+    .getElementById("Go")
+    .addEventListener("click", setObject);
 
 var userName = document.getElementById("userName");
 
@@ -26,36 +80,56 @@ function goscore() {
     }
 }
 
+function handleStartGame(page) {
+    page.startGame.classList.add("hidden");
+    page.clickGame.classList.remove("hidden");
+    //time = setTimeout(gameOver2, 3000); //Temporizador juego
+    time = setTimeout(() => gameOver(page), 2000);
+}
+
 //Pasar de botón Start a botón Click game1
 var startGame1 = document.getElementById("starButton");
 var clickGame1 = document.getElementById("botonClick");
+
 startGame1.onclick = function () {
-    startGame1.classList.add("hidden");
-    clickGame1.classList.remove("hidden");
-    time = setTimeout(gameOver, 2000); //Temporizador juego
+    handleStartGame(pages.page1);
 };
 
 //boton que cuenta los clicks
 var clickNum = document.getElementById("areaContador");
 var count = 0;
 var time;
-clickGame1.addEventListener("click", contador);
+clickGame1.addEventListener("click", () => contador(pages.page1));
 
-function contador() {
+function contador(page) {
     count++;
-    clickNum.textContent = count;
-};
+    page.clickNum.textContent = count;
+}
 
+var scoreResult = document.getElementById("scoreResult");
+// función fin juego
+function gameOver(page) {
+    User.score = count; //guarda la variable de score del objeto
+    page.scoreResult.value = User.score + " points";
+    // var gamers = document.getElementById("ulScore");
+    // gamers.innerHTML =
+    //     gamers.innerHTML + "<li>" +    User.name+User.score+ "</li>";
+        againagain();
+    afterPag();
+}
 
+var scoreResult2 = document.getElementById("scoreResult2");
 
 /*Funcion Play Again*/
-var playAgain = document.getElementById("again").addEventListener("click", again);
+var playAgain = document
+    .getElementById("again")
+    .addEventListener("click", () => again(pages.page1));
 
-function again() {
+function again(page) {
     count = 0;
-    startGame1.classList.remove("hidden");
-    clickGame1.classList.add("hidden");
-    againagain();
+    page.clickNum.textContent = count;
+    page.startGame.classList.remove("hidden");
+    page.clickGame.classList.add("hidden");
     beforePag();
 }
 
@@ -65,12 +139,15 @@ const sectionPages = document.querySelector(".pages");
 const circulos = document.querySelectorAll(".circulo");
 const tabsy = document.querySelector(".tabsy");
 const anterior = document.getElementById("anterior");
-const siguiente = document.getElementById("siguiente").addEventListener("click", afterPag);
+const siguiente = document
+    .getElementById("siguiente");
+
+    siguiente.addEventListener("click", afterPag);
 const tabby = document.querySelectorAll(".tabby");
 
-var nextLevel = document.getElementById("nextLevel").addEventListener("click", afterPag);
-
-
+var nextLevel = document
+    .getElementById("nextLevel")
+    .addEventListener("click", afterPag);
 
 function afterPag() {
     for (let i = 0; i < tabsy.childElementCount - 1; i++) {
@@ -82,7 +159,7 @@ function afterPag() {
             return;
         }
     }
-};
+}
 
 anterior.addEventListener("click", beforePag);
 
@@ -96,7 +173,7 @@ function beforePag() {
             return;
         }
     }
-};
+}
 
 function addRemoveClass(element, i, classToChange, isNext) {
     if (isNext) {
@@ -120,122 +197,26 @@ function change() {
     b.style.top = j + "px";
 }
 
-
 var startGame2 = document.getElementById("starButton2");
 var clickGame2 = document.getElementById("btntest");
+
 startGame2.onclick = function () {
-    startGame2.classList.add("hidden");
-    clickGame2.classList.remove("hidden");
-    time = setTimeout(gameOver, 10000); //Temporizador juego
+    handleStartGame(pages.page2);
 };
 
 //boton que cuenta los clicks Game2
 var clickNum2 = document.getElementById("areaContador2");
-clickGame2.addEventListener("click", contador2);
+clickGame2.addEventListener("click", () => contador(pages.page2));
 
-function contador2() {
-    count++;
-    clickNum2.textContent = count;
-};
+/*Funcion Play Again2*/
+var playAgain2 = document
+    .getElementById("again2")
+    .addEventListener("click", () => again(pages.page2));
 
-/* game 3
-function moveElmRand(elm){
-    elm.style.position ='absolute';
-    elm.style.top = Math.floor(Math.random()*90+5)+'%';
-    elm.style.left = Math.floor(Math.random()*90+5)+'%';
+//boton exit
+var Exit= document.getElementById("exit").addEventListener("click", exit);
+var Exit= document.getElementById("againexit").addEventListener("click", exit);
+
+function exit(){
+    window.location.reload();
 }
-
-   //get the #btn_test
-   var btn_test = document.querySelector('#btn_test');
-
-   //register to call moveElmRand() on mouseenter event to #btn_test
-   btn_test.addEventListener('mouseenter', function(e){ moveElmRand(e.target);});
-
-   //register click to #btn_test
-   btn_test.addEventListener('click', function(e){ alert('You are Good.');});
-
-
-   var startGame1 = document.getElementById("starButton");
-   var clickGame1 = document.getElementById("botonClick");
-   startGame1.onclick = function () {
-       startGame1.classList.add("hidden");
-       clickGame1.classList.remove("hidden");
-       time = setTimeout(gameOver, 10000); //Temporizador juego
-   };
-
- */
-
-/*local storage
-
-const HISTORIC_KEY = "historic";
-const FIRST_TIME_KEY = "firstTime";
-
-let usersList = document.getElementById("historicList");
-let btnAdd = document.getElementById("btnAdd");
-
-let historicList = [];
-
-window.onload = (e) => {
-  initDOMRefs();
-  historicList = [];
-
-  if (localStorage.getItem(HISTORIC_KEY) !== null) {
-    historicList = JSON.parse(localStorage.getItem(HISTORIC_KEY));
-    updateList(historicList);
-  }
-};
-
-function initDOMRefs() {
-  usersList = document.getElementById("historicList");
-  btnAdd = document.getElementById("btnAdd");
-  btnAdd.addEventListener("click", (e) => {
-    addNewUser();
-  });
-}
-
-function createListElement({ username, score }) {
-  const newListItem = document.createElement("li");
-  newListItem.innerText = "Username: " + username + "\nScore: " + score;
-  usersList.appendChild(newListItem);
-}
-
-function updateList(items) {
-  usersList.innerHTML = null;
-  items.forEach((i) => {
-    createListElement({ username: i.username, score: i.score });
-  });
-}
-
-function addNewUser() {
-  const newUser = { username: userName, score: scoreResult };
-  historicList.push(newUser);
-  updateList(historicList);
-  localStorage.setItem(HISTORIC_KEY, JSON.stringify(historicList));
-}
-*/
-
-
-
-var scoreResult = document.querySelector(".scoreResult");
-// función fin juego
-function gameOver() {
-    var score = count; //guarda la variable de score
-    User.score = score; // añade el valor de score al parámetro del objeto
-    scoreResult.value = User.score + " points";
-    var gamers = document.getElementById("ulScore");
-    gamers.innerHTML = gamers.innerHTML + "<li>" + User.name + " => " + User.score + displayScore +"</li>";
-    afterPag();
-}
-
-let displayScore = []
-
-function againagain () {
-
-displayScore.push(User);
-let objectInArray = JSON.stringify(displayScore)
-let objStorage = localStorage.setItem("objectinArray" , objectInArray)
-
-console.log (User);
-};
-
-
