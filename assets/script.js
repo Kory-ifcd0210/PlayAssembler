@@ -15,7 +15,14 @@ function setObject() {
         return false;
     } else {
         User.name = userName.value;
+        goscore();
         afterPag();
+    }
+}
+
+function goscore() {
+    if (JSON.parse(localStorage.getItem("objectInArray"))) {
+        displayScore = JSON.parse(localStorage.getItem("objectInArray"));
     }
 }
 
@@ -216,15 +223,14 @@ function gameOver() {
     User.score = score; // añade el valor de score al parámetro del objeto
     scoreResult.value = User.score + " points";
     var gamers = document.getElementById("ulScore");
-    gamers.innerHTML = gamers.innerHTML + "<li>" + User.name + " => " + User.score + "</li>";
+    gamers.innerHTML = gamers.innerHTML + "<li>" + User.name + " => " + User.score + displayScore +"</li>";
     afterPag();
 }
 
 let displayScore = []
 
 function againagain () {
-const ScoreArray = JSON.stringify(User);
-localStorage.setItem("ScoreArray", ScoreArray);
+
 displayScore.push(User);
 let objectInArray = JSON.stringify(displayScore)
 let objStorage = localStorage.setItem("objectinArray" , objectInArray)
@@ -232,6 +238,4 @@ let objStorage = localStorage.setItem("objectinArray" , objectInArray)
 console.log (User);
 };
 
-window.onload = (e) => {
-    
-}
+
