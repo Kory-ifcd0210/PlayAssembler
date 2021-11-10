@@ -76,7 +76,7 @@ function gameOver(page) {
     page.scoreResult.value = User.score + " points";
     var gamers = document.getElementById("ulScore");
     gamers.innerHTML =
-        gamers.innerHTML + "<li>" +    + "</li>";
+        gamers.innerHTML + "<li>" +    User.name+User.score+ "</li>";
         againagain();
     afterPag();
 }
