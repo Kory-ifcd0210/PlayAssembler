@@ -23,15 +23,21 @@ const User = {
 window.onload =chargeData;
 
 function chargeData(){
+    displayScore= [];
     let objStorage = window.localStorage;
     var data=objStorage.getItem('objectinArray');
     var dataFormated=JSON.parse(data);
     var gamers = document.getElementById("ulScore");
+    gamers.innerHTML = "";
+    dataFormated.sort(function(a,b){
+        return b.score-a.score;
+    });
     for(var i in dataFormated)
     {
         gamers.innerHTML =
         gamers.innerHTML + "<li>" + dataFormated[i].name   +"-"+dataFormated[i].score+ "</li>";
-    }
+        displayScore.push(dataFormated[i]);
+    }    
 }
 
 //localStorage
@@ -39,10 +45,14 @@ let displayScore = [];
 
 let objStorage = window.localStorage;
 function againagain() {
-    displayScore.push(User);
+    if(displayScore.filter(x=> x.name ==User.name && x.score == User.score).length <1)
+    {
+        displayScore.push(User);
+    }
     let objectInArray = JSON.stringify(displayScore);
     objStorage.setItem("objectinArray", objectInArray);
     console.log(User);
+    chargeData();
 }
 
 
@@ -101,9 +111,9 @@ var scoreResult = document.getElementById("scoreResult");
 function gameOver(page) {
     User.score = count; //guarda la variable de score del objeto
     page.scoreResult.value = User.score + " points";
-    var gamers = document.getElementById("ulScore");
-    gamers.innerHTML =
-        gamers.innerHTML + "<li>" +    User.name+User.score+ "</li>";
+    // var gamers = document.getElementById("ulScore");
+    // gamers.innerHTML =
+    //     gamers.innerHTML + "<li>" +    User.name+User.score+ "</li>";
         againagain();
     afterPag();
 }
