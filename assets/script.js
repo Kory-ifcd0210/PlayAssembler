@@ -136,8 +136,7 @@ const sectionPages = document.querySelector(".pages");
 const circulos = document.querySelectorAll(".circulo");
 const tabsy = document.querySelector(".tabsy");
 const anterior = document.getElementById("anterior");
-const siguiente = document
-    .getElementById("siguiente");
+const siguiente = document.getElementById("siguiente");
 
     siguiente.addEventListener("click", afterPag);
 const tabby = document.querySelectorAll(".tabby");
