@@ -1,3 +1,4 @@
+
 const pages = {
     page1: {
         startGame: document.getElementById("starButton"),
@@ -18,6 +19,33 @@ const User = {
     name: "",
     score: 0,
 };
+
+
+window.onload =chargeData;
+
+function chargeData(){
+    let objStorage = window.localStorage;
+    var data=objStorage.getItem('objectinArray');
+    var dataFormated=JSON.parse(data);
+    var gamers = document.getElementById("ulScore");
+    for(var i in dataFormated)
+    {
+        gamers.innerHTML =
+        gamers.innerHTML + "<li>" + dataFormated[i].name   +"-"+dataFormated[i].score+ "</li>";
+    }
+}
+
+//localStorage
+let displayScore = [];
+
+let objStorage = window.localStorage;
+function againagain() {
+    displayScore.push(User);
+    let objectInArray = JSON.stringify(displayScore);
+    objStorage.setItem("objectinArray", objectInArray);
+    console.log(User);
+}
+
 
 //Introducir nuevo usuario
 var goButton = document
@@ -47,7 +75,7 @@ function handleStartGame(page) {
     page.startGame.classList.add("hidden");
     page.clickGame.classList.remove("hidden");
     //time = setTimeout(gameOver2, 3000); //Temporizador juego
-    time = setTimeout(() => gameOver(page), 5000);
+    time = setTimeout(() => gameOver(page), 2000);
 }
 
 //Pasar de botón Start a botón Click game1
@@ -103,8 +131,9 @@ const circulos = document.querySelectorAll(".circulo");
 const tabsy = document.querySelector(".tabsy");
 const anterior = document.getElementById("anterior");
 const siguiente = document
-    .getElementById("siguiente")
-    .addEventListener("click", afterPag);
+    .getElementById("siguiente");
+
+    siguiente.addEventListener("click", afterPag);
 const tabby = document.querySelectorAll(".tabby");
 
 var nextLevel = document
@@ -175,13 +204,9 @@ var playAgain2 = document
     .getElementById("again2")
     .addEventListener("click", () => again(pages.page2));
 
-//localStorage
-let displayScore = [];
+//boton exit
+var Exit= document.getElementById("exit").addEventListener("click", exit);
 
-let objStorage = window.localStorage;
-function againagain() {
-    displayScore.push(User);
-    let objectInArray = JSON.stringify(displayScore);
-    objStorage.setItem("objectinArray", objectInArray);
-    console.log(User);
+function exit(){
+    window.location.reload();
 }
