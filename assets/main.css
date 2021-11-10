@@ -17,15 +17,18 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
-
+/*
 main {
     padding-left: 142px;
     padding-right: 142px;
-}
+}*/
 
 .col-left{
     float: left;
     width: 30%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    max-height: 100%;
 }
 .col-right{
     float: right;
@@ -67,14 +70,51 @@ main {
 /*Score Style*/
 #score{
     float: left;
-    background-color: var(--white);
+    background-color: #fafafa;
     width: 20%;
     text-align: center;
     height: 100vh;
+    
+}
+
+
+#score{
+
+}
+    @keyframes change {
+        0%{background-color: #1abc9c;}
+        25%{background-color: #2ecc71;}
+        50%{background-color: #3498db;}
+        75%{background-color: #9b59b6;}
+        100%{background-color: #e74c3c;}
+    }
+
+#score ul li:first-child {
+        animation: change 10s infinite;
+        font-weight: bold;
+        border-radius: 20px;
+        max-width: 60%;
+        max-width: 60%;
+        color: azure;
+      }
+
+
+
+#score ul{
+    
+   margin-right: 10%;
+    margin-left: 0%;
 }
 
 #score ul li{
     list-style: none;
+    text-align: center;
+    
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-size: 25px;
+    
+    
 }
 
 /*Principal page*/
@@ -132,4 +172,14 @@ main {
 
 #btntest{
     position: relative;
+}
+
+#go {
+    background-image: ("assets\img\game1.jpg");
+}
+
+.divlist {
+    text-align: center;
+    height: 100vh;
+    list-style: none;
 }
