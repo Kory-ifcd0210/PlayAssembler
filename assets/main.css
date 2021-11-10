@@ -2,6 +2,9 @@
     --main-color-bg: #fdc5c8ff;
     --white:#fafafa;
     --grey: #cbcac8ff;
+    --complementary: #5CDCA9;
+    --black: #1B0B12;
+    --shade: #522236;
 }
 
 /*Generic Styles*/
@@ -64,6 +67,22 @@ main {
     display: none;
 }
 
+/*buttons*/
+.botonGeneral{
+    background-color: black;
+    color: var(--white);
+    font-size: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.5);
+    padding: 5px 20px;
+}
+
+.buttonGame{
+    background-color: var(--shade);
+    color: var(--white);
+
+}
+
 /*Score Style*/
 #score{
     float: left;
@@ -81,6 +100,8 @@ main {
 #player {
     display: flex;
     height: 500px;
+    text-align: center;
+    align-items: center;
 }
 
 #player div{
@@ -95,17 +116,11 @@ main {
     object-fit: contain;
 }
 
-/*Style principal page*/
-#player{
-    text-align: center;
-    align-items: center;
-}
-
 .userStart{
     border: 1px solid beige;
 }
 
-/*Game 1 Page*/
+/*Game Page*/
 #game1{
     display: flex;
     justify-content: center;

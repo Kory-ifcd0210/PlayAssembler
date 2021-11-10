@@ -22,14 +22,13 @@
     <div id="score" class=" col-left">
         <h1>Score</h1>
         <ul id="ulScore">
-
         </ul>
     </div>
     <section class="tabby is-active">
         <div id="player" class="pagey is-active" data-pagey="1">
                 <div class="col-left userStart">
                     <h1>Totem cat</h1>
-                    <button id="Go">Go!</button>
+                    <button id="Go" class="botonGeneral">Go!</button>
                     <p>Choose your</p>
                     <input type="text" id="userName" placeholder="User Name" value="">
                 </div>
@@ -41,8 +40,8 @@
     <section class="tabby">
         <div id="game1" class="pagey" data-pagey="2">
             <div class="col-left" id="containerLeft">
-                    <button id="starButton">Start</button>
-                    <button id="botonClick" class="hidden">Click</button>
+                    <button id="starButton" class="buttonGame">Start</button>
+                    <button id="botonClick" class="hidden buttonGame">Click</button>
                     <p id="areaContador" class="displayClickCount"></p>
                 </div>
                 <div id="displayCats" class="col-right">
@@ -57,9 +56,9 @@
                 <p>Your Score in 10s</p>
                 <input type="text" id="scoreResult" value="" readonly><!--Variable guardada de resultados-->
                 <nav>
-                    <button id="again">Play again</button>
-                    <button id="againexit">Play again</button>
-                    <button id="nextLevel">Level 2</button>
+                    <button id="again" class="botonGeneral">Play again</button>
+                    <button id="againexit" class="botonGeneral">Play again</button>
+                    <button id="nextLevel" class="botonGeneral">Level 2</button>
                 </nav>
                 <img class="col-right"><!-- foto gatitos portada -->
         </div>
@@ -67,10 +66,10 @@
     <section class="tabby">
         <div  id="game2" class="pagey" data-pagey="4">
                 <div class="col-left" id="containerLeft">
-                    <button id="starButton2">Start</button>
+                    <button id="starButton2" class="buttonGame">Start</button>
                 </div>
                 <img class="col-right"><!-- foto gatitos portada más pequeños -->
-                <button id='btntest' class="hidden">Catch Me</button>
+                <button id='btntest' class="hidden buttonGame">Catch Me</button>
                 <p id="areaContador2" class="displayClickCount"></p>
     </section>
     <section class="tabby">
@@ -80,8 +79,8 @@
                 <label>Your Score in 10s</label>
                 <input type="text" id="scoreResult2" readonly><!--Variable guardada de resultados-->
                 <nav>
-                    <button id="again2">Play again</button>
-                    <button id="exit">exit</button>
+                    <button id="again2" class="botonGeneral">Play again</button>
+                    <button id="exit" class="botonGeneral">exit</button>
                 </nav>
                 </div>
                 <div class="col-right">
@@ -89,7 +88,7 @@
                 </div>
         </div>
     </section>
-                <div class="btnPrevNext">
+                <div class="btnPrevNext hidden">
                     <button class="btn" id="anterior">Anterior</button>
                     <button class="btn" id="siguiente">Siguiente</button>
                 </div>

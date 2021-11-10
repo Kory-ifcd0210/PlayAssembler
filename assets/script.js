@@ -111,9 +111,6 @@ var scoreResult = document.getElementById("scoreResult");
 function gameOver(page) {
     User.score = count; //guarda la variable de score del objeto
     page.scoreResult.value = User.score + " points";
-    // var gamers = document.getElementById("ulScore");
-    // gamers.innerHTML =
-    //     gamers.innerHTML + "<li>" +    User.name+User.score+ "</li>";
         againagain();
     afterPag();
 }
