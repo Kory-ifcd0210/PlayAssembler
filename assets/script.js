@@ -32,7 +32,14 @@ function setObject() {
         return false;
     } else {
         User.name = userName.value;
+        goscore();
         afterPag();
+    }
+}
+
+function goscore() {
+    if (JSON.parse(localStorage.getItem("objectInArray"))) {
+        displayScore = JSON.parse(localStorage.getItem("objectInArray"));
     }
 }
 
@@ -69,7 +76,8 @@ function gameOver(page) {
     page.scoreResult.value = User.score + " points";
     var gamers = document.getElementById("ulScore");
     gamers.innerHTML =
-        gamers.innerHTML + "<li>" + User.name + " => " + User.score + "</li>";
+        gamers.innerHTML + "<li>" +    + "</li>";
+        againagain();
     afterPag();
 }
 
@@ -81,15 +89,10 @@ var playAgain = document
     .addEventListener("click", () => again(pages.page1));
 
 function again(page) {
-    console.log("Holiiiiiiii");
     count = 0;
     page.clickNum.textContent = count;
-    console.log(page);
-    console.log(page.startGame);
-    console.log(page.clickGame);
     page.startGame.classList.remove("hidden");
     page.clickGame.classList.add("hidden");
-    console.log(page);
     beforePag();
 }
 
@@ -171,3 +174,14 @@ clickGame2.addEventListener("click", () => contador(pages.page2));
 var playAgain2 = document
     .getElementById("again2")
     .addEventListener("click", () => again(pages.page2));
+
+//localStorage
+let displayScore = [];
+
+let objStorage = window.localStorage;
+function againagain() {
+    displayScore.push(User);
+    let objectInArray = JSON.stringify(displayScore);
+    objStorage.setItem("objectinArray", objectInArray);
+    console.log(User);
+}
