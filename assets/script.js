@@ -1,11 +1,28 @@
+const pages = {
+    page1: {
+        startGame: document.getElementById("starButton"),
+        clickGame: document.getElementById("botonClick"),
+        clickNum: document.getElementById("areaContador"),
+        scoreResult: document.getElementById("scoreResult"),
+    },
+    page2: {
+        startGame: document.getElementById("starButton2"),
+        clickGame: document.getElementById("btntest"),
+        clickNum: document.getElementById("areaContador2"),
+        scoreResult: document.getElementById("scoreResult2"),
+    },
+};
+
 //Objeto Gamer
 const User = {
     name: "",
     score: 0,
-}
+};
 
 //Introducir nuevo usuario
-var goButton = document.getElementById("Go").addEventListener("click", setObject);
+var goButton = document
+    .getElementById("Go")
+    .addEventListener("click", setObject);
 
 var userName = document.getElementById("userName");
 
@@ -19,44 +36,60 @@ function setObject() {
     }
 }
 
+function handleStartGame(page) {
+    page.startGame.classList.add("hidden");
+    page.clickGame.classList.remove("hidden");
+    //time = setTimeout(gameOver2, 3000); //Temporizador juego
+    time = setTimeout(() => gameOver(page), 5000);
+}
+
 //Pasar de botón Start a botón Click game1
 var startGame1 = document.getElementById("starButton");
 var clickGame1 = document.getElementById("botonClick");
+
 startGame1.onclick = function () {
-    startGame1.classList.add("hidden");
-    clickGame1.classList.remove("hidden");
-    time = setTimeout(gameOver, 2000); //Temporizador juego
+    handleStartGame(pages.page1);
 };
 
 //boton que cuenta los clicks
 var clickNum = document.getElementById("areaContador");
 var count = 0;
 var time;
-clickGame1.addEventListener("click", contador);
+clickGame1.addEventListener("click", () => contador(pages.page1));
 
-function contador() {
+function contador(page) {
     count++;
-    clickNum.textContent = count;
-};
+    page.clickNum.textContent = count;
+}
 
-var scoreResult = document.querySelector(".scoreResult");
+var scoreResult = document.getElementById("scoreResult");
 // función fin juego
-function gameOver() {
-    var score = count; //guarda la variable de score
-    User.score = score; // añade el valor de score al parámetro del objeto
-    scoreResult.value = User.score + " points";
+function gameOver(page) {
+    User.score = count; //guarda la variable de score del objeto
+    page.scoreResult.value = User.score + " points";
     var gamers = document.getElementById("ulScore");
-    gamers.innerHTML = gamers.innerHTML + "<li>" + User.name + " => " + User.score + "</li>";
+    gamers.innerHTML =
+        gamers.innerHTML + "<li>" + User.name + " => " + User.score + "</li>";
     afterPag();
 }
 
-/*Funcion Play Again*/
-var playAgain = document.getElementById("again").addEventListener("click", again);
+var scoreResult2 = document.getElementById("scoreResult2");
 
-function again() {
+/*Funcion Play Again*/
+var playAgain = document
+    .getElementById("again")
+    .addEventListener("click", () => again(pages.page1));
+
+function again(page) {
+    console.log("Holiiiiiiii");
     count = 0;
-    startGame1.classList.remove("hidden");
-    clickGame1.classList.add("hidden");
+    page.clickNum.textContent = count;
+    console.log(page);
+    console.log(page.startGame);
+    console.log(page.clickGame);
+    page.startGame.classList.remove("hidden");
+    page.clickGame.classList.add("hidden");
+    console.log(page);
     beforePag();
 }
 
@@ -66,12 +99,14 @@ const sectionPages = document.querySelector(".pages");
 const circulos = document.querySelectorAll(".circulo");
 const tabsy = document.querySelector(".tabsy");
 const anterior = document.getElementById("anterior");
-const siguiente = document.getElementById("siguiente").addEventListener("click", afterPag);
+const siguiente = document
+    .getElementById("siguiente")
+    .addEventListener("click", afterPag);
 const tabby = document.querySelectorAll(".tabby");
 
-var nextLevel = document.getElementById("nextLevel").addEventListener("click", afterPag);
-
-
+var nextLevel = document
+    .getElementById("nextLevel")
+    .addEventListener("click", afterPag);
 
 function afterPag() {
     for (let i = 0; i < tabsy.childElementCount - 1; i++) {
@@ -83,7 +118,7 @@ function afterPag() {
             return;
         }
     }
-};
+}
 
 anterior.addEventListener("click", beforePag);
 
@@ -97,7 +132,7 @@ function beforePag() {
             return;
         }
     }
-};
+}
 
 function addRemoveClass(element, i, classToChange, isNext) {
     if (isNext) {
@@ -121,47 +156,18 @@ function change() {
     b.style.top = j + "px";
 }
 
-
 var startGame2 = document.getElementById("starButton2");
 var clickGame2 = document.getElementById("btntest");
+
 startGame2.onclick = function () {
-    startGame2.classList.add("hidden");
-    clickGame2.classList.remove("hidden");
-    time = setTimeout(gameOver, 10000); //Temporizador juego
+    handleStartGame(pages.page2);
 };
 
 //boton que cuenta los clicks Game2
 var clickNum2 = document.getElementById("areaContador2");
-clickGame2.addEventListener("click", contador2);
+clickGame2.addEventListener("click", () => contador(pages.page2));
 
-function contador2() {
-    count++;
-    clickNum2.textContent = count;
-};
-
-/* game 3
-function moveElmRand(elm){
-    elm.style.position ='absolute';
-    elm.style.top = Math.floor(Math.random()*90+5)+'%';
-    elm.style.left = Math.floor(Math.random()*90+5)+'%';
-}
-
-   //get the #btn_test
-   var btn_test = document.querySelector('#btn_test');
-
-   //register to call moveElmRand() on mouseenter event to #btn_test
-   btn_test.addEventListener('mouseenter', function(e){ moveElmRand(e.target);});
-
-   //register click to #btn_test
-   btn_test.addEventListener('click', function(e){ alert('You are Good.');});
-
-
-   var startGame1 = document.getElementById("starButton");
-   var clickGame1 = document.getElementById("botonClick");
-   startGame1.onclick = function () {
-       startGame1.classList.add("hidden");
-       clickGame1.classList.remove("hidden");
-       time = setTimeout(gameOver, 10000); //Temporizador juego
-   };
-
- */
+/*Funcion Play Again2*/
+var playAgain2 = document
+    .getElementById("again2")
+    .addEventListener("click", () => again(pages.page2));
