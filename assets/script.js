@@ -123,8 +123,13 @@ startGame2.onclick = function () {
 };
 
 //boton que cuenta los clicks Game2
-var clickNum = document.getElementById("areaContador2");
-clickGame2.addEventListener("click", contador);
+var clickNum2 = document.getElementById("areaContador2");
+clickGame2.addEventListener("click", contador2);
+
+function contador2() {
+    count++;
+    clickNum2.textContent = count;
+};
 
 /* game 3
 function moveElmRand(elm){
