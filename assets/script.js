@@ -39,16 +39,7 @@ function contador() {
     clickNum.textContent = count;
 };
 
-var scoreResult = document.querySelector(".scoreResult");
-// función fin juego
-function gameOver() {
-    var score = count; //guarda la variable de score
-    User.score = score; // añade el valor de score al parámetro del objeto
-    scoreResult.value = User.score + " points";
-    var gamers = document.getElementById("ulScore");
-    gamers.innerHTML = gamers.innerHTML + "<li>" + User.name + " => " + User.score + "</li>";
-    afterPag();
-}
+
 
 /*Funcion Play Again*/
 var playAgain = document.getElementById("again").addEventListener("click", again);
@@ -57,6 +48,7 @@ function again() {
     count = 0;
     startGame1.classList.remove("hidden");
     clickGame1.classList.add("hidden");
+    againagain();
     beforePag();
 }
 
@@ -160,3 +152,81 @@ function moveElmRand(elm){
    };
 
  */
+
+/*local storage
+
+const HISTORIC_KEY = "historic";
+const FIRST_TIME_KEY = "firstTime";
+
+let usersList = document.getElementById("historicList");
+let btnAdd = document.getElementById("btnAdd");
+
+let historicList = [];
+
+window.onload = (e) => {
+  initDOMRefs();
+  historicList = [];
+
+  if (localStorage.getItem(HISTORIC_KEY) !== null) {
+    historicList = JSON.parse(localStorage.getItem(HISTORIC_KEY));
+    updateList(historicList);
+  }
+};
+
+function initDOMRefs() {
+  usersList = document.getElementById("historicList");
+  btnAdd = document.getElementById("btnAdd");
+  btnAdd.addEventListener("click", (e) => {
+    addNewUser();
+  });
+}
+
+function createListElement({ username, score }) {
+  const newListItem = document.createElement("li");
+  newListItem.innerText = "Username: " + username + "\nScore: " + score;
+  usersList.appendChild(newListItem);
+}
+
+function updateList(items) {
+  usersList.innerHTML = null;
+  items.forEach((i) => {
+    createListElement({ username: i.username, score: i.score });
+  });
+}
+
+function addNewUser() {
+  const newUser = { username: userName, score: scoreResult };
+  historicList.push(newUser);
+  updateList(historicList);
+  localStorage.setItem(HISTORIC_KEY, JSON.stringify(historicList));
+}
+*/
+
+
+
+var scoreResult = document.querySelector(".scoreResult");
+// función fin juego
+function gameOver() {
+    var score = count; //guarda la variable de score
+    User.score = score; // añade el valor de score al parámetro del objeto
+    scoreResult.value = User.score + " points";
+    var gamers = document.getElementById("ulScore");
+    gamers.innerHTML = gamers.innerHTML + "<li>" + User.name + " => " + User.score + "</li>";
+    afterPag();
+}
+
+let displayScore = []
+
+function againagain () {
+const ScoreArray = JSON.stringify(User);
+localStorage.setItem("ScoreArray", ScoreArray);
+displayScore.push(User);
+let objectInArray = JSON.stringify(displayScore)
+let objStorage = localStorage.setItem("objectinArray" , objectInArray)
+
+console.log (User);
+};
+
+window.onload = (e) => {
+    
+}
