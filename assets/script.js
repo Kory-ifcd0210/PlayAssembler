@@ -1,4 +1,4 @@
-const pages = {
+const pages = { 
     page1: {
         startGame: document.getElementById("starButton"),
         clickGame: document.getElementById("botonClick"),
