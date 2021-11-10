@@ -55,7 +55,7 @@
                 <h1>Totem cat</h1>
                 <p>Game Over</p>
                 <p>Your Score in 10s</p>
-                <input type="text" class="scoreResult" readonly><!--Variable guardada de resultados-->
+                <input type="text" id="scoreResult" value="" readonly><!--Variable guardada de resultados-->
                 <nav>
                     <button id="again">Play again</button>
                     <button id="nextLevel">Level 2</button>
@@ -74,9 +74,15 @@
     </section>
     <section class="tabby">
         <div  id="result2" class="pagey" data-pagey="5">
+            <div class="col-left">
                 <h1>Totem cat</h1>
                 <label>Your Score in 10s</label>
-                <input type="text" class="scoreResult" readonly><!--Variable guardada de resultados-->
+                <input type="text" id="scoreResult2" readonly><!--Variable guardada de resultados-->
+                <nav>
+                    <button id="again2">Play again</button>
+                    <button id="exit">exit</button>
+                </nav>
+                </div>
                 <div class="col-right">
                     <img class="indexImg" src="assets\img\screen-1.jpg">
                 </div>
