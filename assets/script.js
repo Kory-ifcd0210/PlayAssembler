@@ -1,4 +1,3 @@
-
 const pages = {
     page1: {
         startGame: document.getElementById("starButton"),
