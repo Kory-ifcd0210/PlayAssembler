@@ -97,6 +97,32 @@ button{
     color: var(--white);
 }
 
+#btntest{
+    position: relative;
+}
+
+#go {
+    background-image: url(img\paw.jpg);
+}
+
+/*Inputs*/
+input{
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'FontAwesome';
+}
+input[type="text"] {
+    position: relative;
+}
+
+input:hover{
+    border-color: var(--complementary);
+}
+
+input:focus{
+    border-color: var(--black);
+}
+
 /*Score Style*/
 #score{
     float: left;
@@ -104,7 +130,6 @@ button{
     width: 20%;
     text-align: center;
     height: 100vh;
-    
 }
 
     @keyframes change {
@@ -122,25 +147,22 @@ button{
         max-width: 60%;
         max-width: 60%;
         color: azure;
-      }
+}
 
 
 
 #score ul{
-    
-   margin-right: 10%;
+
+    margin-right: 10%;
     margin-left: 0%;
 }
 
 #score ul li{
     list-style: none;
     text-align: center;
-    
     margin-top: 10%;
     margin-bottom: 10%;
     font-size: 25px;
-    
-    
 }
 
 /*Principal page*/
@@ -187,18 +209,9 @@ button{
     font-weight: bold;
     font-family: impact;
     margin: 10px;
+    position: absolute;
 }
 
-
-
-
-#btntest{
-    position: relative;
-}
-
-#go {
-    background-image: ("assets\img\game1.jpg");
-}
 
 .divlist {
     text-align: center;
