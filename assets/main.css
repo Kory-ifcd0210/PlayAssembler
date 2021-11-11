@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
 :root{
     --main-color-bg: #fdc5c8ff;
     --white:#fafafa;
@@ -14,10 +16,10 @@ body{
     padding: 0;
     max-width: 100%;
     overflow-x: hidden;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Mochiy Pop One', sans-serif;
 }
 
-html, body {
+html {
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -26,6 +28,17 @@ main {
     padding-left: 142px;
     padding-right: 142px;
 }*/
+h1{
+    font-size: 30px;
+    margin:0;
+}
+.japo{
+    font-size: 18px;
+    color: var(--shade);
+}
+.japo h1{
+    color: var(--white);
+}
 
 .col-left{
     float: left;
@@ -80,6 +93,8 @@ button{
     font-weight: bold;
     border-radius: 20px;
     padding: 5px 20px;
+    text-align: center;
+    margin-top: 5%;
 }
 
 .botonGeneral{
@@ -93,30 +108,25 @@ button{
 }
 
 .botonGeneral:active{
-    background-color: var(--white);
+    background-color: var(--complementary);
 }
 
 .buttonGame{
     background-color: var(--shade);
     color: var(--white);
+    justify-content: center;
+    align-items: center;
 }
 
 #btntest{
     position: relative;
 }
 
-#go {
-    background-image: url(img\paw.jpg);
-}
-
 /*Inputs*/
 input{
     border-radius: 20px;
     text-align: center;
-    font-family: 'FontAwesome';
-}
-input[type="text"] {
-    position: relative;
+    font-weight: bold;
 }
 
 input:hover{
@@ -124,7 +134,7 @@ input:hover{
 }
 
 input:focus{
-    border-color: var(--black);
+    border-color: var(--shade);
 }
 
 /*Score Style*/
@@ -135,7 +145,6 @@ input:focus{
     text-align: center;
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
-    
 }
 
     @keyframes change {
@@ -151,7 +160,7 @@ input:focus{
         font-weight: bold;
         border-radius: 20px;
         color: azure;
-        margin-bottom: 15%;;
+        margin-bottom: 15%;
     }
 
     #score ul{
@@ -331,7 +340,7 @@ input:focus{
     }
 }
 .body {
-    
+
     background-color: #dfa048;
     height: 90px;
     width: 140px;
@@ -410,6 +419,11 @@ input:focus{
     animation: change2 10s infinite;
     font-weight: bold;
     border-radius: 20px;
-    
     color: azure;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.gameover1div{
+    text-align: center;
 }
