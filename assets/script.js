@@ -42,7 +42,7 @@ function chargeData(){
 }
 
 function lengthy (){ 
-    displayScore.length = 12;
+    displayScore.length = 11;
 }
 
 
