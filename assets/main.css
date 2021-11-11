@@ -188,6 +188,10 @@ input:focus{
     border: 1px solid beige;
 }
 
+#errorMesage{
+    color: var(--shade);
+}
+
 /*Game Page*/
 #game1{
     display: flex;

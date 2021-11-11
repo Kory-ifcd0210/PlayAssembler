@@ -65,12 +65,11 @@ var userName = document.getElementById("userName");
 
 function setObject() {
     if (userName.value == "") {
-        let validation= document.querySelector(".userStart");
-
-        alert("Name must be filled out");
-        return false;
+        let errorMesage= document.getElementById("errorMesage");
+        errorMesage.innerHTML="Name must be filled out";
     } else {
         User.name = userName.value;
+        errorMesage.innerHTML="";
         goscore();
         afterPag();
     }
