@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
 :root{
     --main-color-bg: #fdc5c8ff;
     --white:#fafafa;
@@ -14,10 +16,10 @@ body{
     padding: 0;
     max-width: 100%;
     overflow-x: hidden;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Mochiy Pop One', sans-serif;
 }
 
-html, body {
+html {
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -26,7 +28,9 @@ main {
     padding-left: 142px;
     padding-right: 142px;
 }*/
-
+.japo{
+    color: var(--white);
+}
 .col-left{
     float: left;
     width: 30%;
@@ -80,6 +84,7 @@ button{
     font-weight: bold;
     border-radius: 20px;
     padding: 5px 20px;
+    text-align: center;
 }
 
 .botonGeneral{
@@ -99,6 +104,8 @@ button{
 .buttonGame{
     background-color: var(--shade);
     color: var(--white);
+    justify-content: center;
+    align-items: center;
 }
 
 #btntest{
@@ -331,7 +338,7 @@ input:focus{
     }
 }
 .body {
-    
+
     background-color: #dfa048;
     height: 90px;
     width: 140px;
@@ -410,6 +417,11 @@ input:focus{
     animation: change2 10s infinite;
     font-weight: bold;
     border-radius: 20px;
-    
     color: azure;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.gameover1div{
+    text-align: center;
 }
