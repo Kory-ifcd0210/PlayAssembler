@@ -35,10 +35,12 @@ function chargeData(){
     for(var i in dataFormated)
     {
         gamers.innerHTML =
-        gamers.innerHTML + "<li>" + dataFormated[i].name   +"-"+dataFormated[i].score+ "</li>";
+        gamers.innerHTML + "<li>" + dataFormated[i].name   +" "+"-" +" "+ dataFormated[i].score+ "</li>";
         displayScore.push(dataFormated[i]);
     }    
 }
+
+
 
 //localStorage
 let displayScore = [];
