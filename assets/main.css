@@ -14,6 +14,7 @@ body{
     padding: 0;
     max-width: 100%;
     overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
 }
 
 html, body {
@@ -156,6 +157,7 @@ button{
     align-items: center;
     flex-direction: column;
     width: 40%;
+    border: 2px solid #fdc5c8ff;
 }
 
 .indexImg{
@@ -204,4 +206,12 @@ button{
     text-align: center;
     height: 100vh;
     list-style: none;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+
+#username{
+    border-top: 10%;
 }
