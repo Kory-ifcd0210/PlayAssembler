@@ -91,7 +91,7 @@ function handleStartGame(page) {
     page.startGame.classList.add("hidden");
     page.clickGame.classList.remove("hidden");
     //time = setTimeout(gameOver2, 3000); //Temporizador juego
-    time = setTimeout(() => gameOver(page), 2000);
+    time = setTimeout(() => gameOver(page), 8000);
 }
 
 //Pasar de botón Start a botón Click game1
