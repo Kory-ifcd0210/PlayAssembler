@@ -1,127 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel=stylesheet type="text/css" href="/assets/main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="/assets/script.js" language="javascript" type="text/javascript" defer></script>
     <title>Totem Cat</title>
 </head>
+
 <body>
     <section>
-    <div class="contenedor" id="accountbody">
-        <div class="progreso-contenedor tabsy">
-            <div class="circulo active taby">1</div>
-            <div class="circulo taby">2</div>
-            <div class="circulo taby">3</div>
-            <div class="circulo taby">4</div>
-            <div class="circulo taby">5</div>
+        <div class="contenedor" id="accountbody">
+            <div class="progreso-contenedor tabsy">
+                <div class="circulo active taby">1</div>
+                <div class="circulo taby">2</div>
+                <div class="circulo taby">3</div>
+                <div class="circulo taby">4</div>
+                <div class="circulo taby">5</div>
+            </div>
         </div>
-    </div>
-    <div id="score" class=" col-left">
-        <audio id="audio" src="img/NyanCat.mp3"  autoplay loop controls></audio>
-        <h1>Score</h1>
-        <ul id="ulScore">
-        </ul>
-    </div>
-    <section class="tabby is-active">
-        <div id="player" class="pagey is-active" data-pagey="1">
+        <div id="score" class=" col-left">
+            <audio id="audio" src="img/NyanCat.mp3" autoplay loop controls></audio>
+            <h1>Score</h1>
+            <ul id="ulScore">
+            </ul>
+        </div>
+        <section class="tabby is-active">
+            <div id="player" class="pagey is-active" data-pagey="1">
                 <div class="col-left userStart">
                     <h1>Totem cat</h1>
                     <h1 class="japo">トーテム・キャット</h1>
                     <button id="Go" class="botonGeneral">Go!</button>
                     <p>Write your</p>
                     <i class="fas fa-paw"></i>
-                    <input type="text" id="userName" placeholder="User Name" >
+                    <input type="text" id="userName" placeholder="User Name">
                     <p id="errorMesage"></p>
                 </div>
                 <div class="col-right">
-                <img class="indexImg" src="assets\img\gatosPortada.png">
+                    <img class="indexImg" src="assets\img\gatosPortada.png">
                 </div>
-        </div>
-    </section>
-    <section class="tabby">
-        <div id="game1" class="pagey" data-pagey="2">
-            <p id="areaContador" class="displayClickCount col-left"></p>
-            <div class="col-right" id="containerLeft">
-                <button id="starButton" class="buttonGame">Start</button>
-                <button id="botonClick" class="hidden buttonGame"><i class="fas fa-paw"></i></button>
             </div>
+        </section>
+        <section class="tabby">
+            <div id="game1" class="pagey" data-pagey="2">
+                <p id="areaContador" class="displayClickCount col-left"></p>
+                <div class="col-right" id="containerLeft">
+                    <button id="starButton" class="buttonGame">Start</button>
+                    <button id="botonClick" class="hidden buttonGame"><i class="fas fa-paw"></i></button>
+                </div>
                 <div id="displayCats" class="col-right">
                     <img class="indexImg" src="assets/img/game1.png">
                 </div>
-        </div>
-    </section>
-    <section class="tabby">
-        <div id="result1" class="pagey" data-pagey="3">
-            <div class="container">
-                <div class="shadow"></div>
-                <div class="cat">
-                    <div class="ear"></div>
-                    <div class="eye"></div>
-                    <div class="mouth"></div>
-                    <div class="nose"></div>
-                    <div class="tail"></div>
-                    <div class="body"></div>
-                    <div class="bubble"></div>
+            </div>
+        </section>
+        <section class="tabby">
+            <div id="result1" class="pagey" data-pagey="3">
+                <div class="container">
+                    <div class="shadow"></div>
+                    <div class="cat">
+                        <div class="ear"></div>
+                        <div class="eye"></div>
+                        <div class="mouth"></div>
+                        <div class="nose"></div>
+                        <div class="tail"></div>
+                        <div class="body"></div>
+                        <div class="bubble"></div>
+                    </div>
+                </div>
+                <div class="gameover1div">
+                    <h1>Totem cat</h1>
+                    <p class="gameoverp">Game Over</p>
+                    <p class="gameoverp japo">ゲーム・オーバー</p>
+                    <label>Your Score in 10s</label>
+                    <i class="fas fa-paw"></i>
+                    <input type="text" id="scoreResult" readonly>
+                    <nav>
+                        <button id="againexit" class="botonGeneral">Exit</button>
+                        <button id="nextLevel" class="botonGeneral">Level 2</button>
+                    </nav>
                 </div>
             </div>
-            <div class="gameover1div">
-                <h1>Totem cat</h1>
-                <p class="gameoverp">Game Over</p>
-                <p class="ameoverp japo">ゲーム・オーバー</p>
-                <p>Your Score in 10s</p>
-                <i class="fas fa-paw"></i>
-                <input type="text" id="scoreResult" value="" readonly >
-                <nav>
-                    <!-- <button id="again" class="botonGeneral">Play again</button> -->
-                    <button id="againexit" class="botonGeneral">Exit</button>
-                    <button id="nextLevel" class="botonGeneral">Level 2</button>
-                </nav>
-                <img class="col-right"><!-- foto gatitos portada -->
-            </div>
-        </div>
-    </section>
-    <section class="tabby">
-        <div  id="game2" class="pagey" data-pagey="4">
-            <div class="col-left">
-            <p id="areaContador2" class="displayClickCount col-left"></p>
-                <div class="col-right" id="containerLeft">
-                    <button id="starButton2" class="buttonGame">Start</button>
-                    <button id='btntest' class="hidden buttonGame"><i class="fas fa-paw"></i></button>
-                </div>
+        </section>
+        <section class="tabby">
+            <div id="game2" class="pagey" data-pagey="4">
+                <div class="col-left">
+                    <p id="areaContador2" class="displayClickCount col-left"></p>
+                    <div class="col-right" id="containerLeft">
+                        <button id="starButton2" class="buttonGame">Start</button>
+                        <button id='btntest' class="hidden buttonGame"><i class="fas fa-paw"></i></button>
+                    </div>
                 </div>
             </div>
             <div id="displayCats" class="col-right">
                 <img class="indexImg" src="assets/img/game1.png">
             </div>
-    </div>
-    </section>
-    <section class="tabby">
-        <div  id="result2" class="pagey" data-pagey="5">
-            <div class="col-left gameover1div">
-                <h1>Totem cat</h1>
-                <p class="gameoverp">Game Over</p>
-                <p class="ameoverp japo">ゲーム・オーバー</p>
-                <label>Your Score in 10s</label>
-                <i class="fas fa-paw"></i>
-                <input type="text" id="scoreResult2" readonly><!--Variable guardada de resultados-->
-                <nav>
-                    <!-- <button id="again2" class="botonGeneral">Play again</button> -->
-                    <button id="exit" class="botonGeneral">exit</button>
-                </nav>
+            </div>
+        </section>
+        <section class="tabby">
+            <div id="result2" class="pagey" data-pagey="5">
+                <div class="container">
+                    <div class="shadow"></div>
+                    <div class="cat">
+                        <div class="ear"></div>
+                        <div class="eye"></div>
+                        <div class="mouth"></div>
+                        <div class="nose"></div>
+                        <div class="tail"></div>
+                        <div class="body"></div>
+                        <div class="bubble"></div>
+                    </div>
                 </div>
-                <!-- <div class="col-right">
-                    <img class="indexImg" src="assets\img\gatosPortada.png">
-                </div> -->
+                <div class="gameover1div">
+                    <h1>Totem cat</h1>
+                    <p class="gameoverp">Game Over</p>
+                    <p class="gameoverp japo">ゲーム・オーバー</p>
+                    <label>Your Score in 10s</label>
+                    <i class="fas fa-paw"></i>
+                    <input type="text" id="scoreResult2" readonly>
+                    <nav>
+                        <button id="exit" class="botonGeneral">Exit</button>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <div class="btnPrevNext hidden">
+            <button class="btn" id="anterior">Anterior</button>
+            <button class="btn" id="siguiente">Siguiente</button>
         </div>
     </section>
-                <div class="btnPrevNext hidden">
-                    <button class="btn" id="anterior">Anterior</button>
-                    <button class="btn" id="siguiente">Siguiente</button>
-                </div>
-    </section>
 </body>
+
 </html>

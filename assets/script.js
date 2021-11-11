@@ -35,7 +35,7 @@ function chargeData(){
     for(var i in dataFormated)
     {
         gamers.innerHTML =
-        gamers.innerHTML + "<li>" + dataFormated[i].name   +"-"+dataFormated[i].score+ "</li>";
+        gamers.innerHTML + "<li>" +"<div class='icon'>" + "<i class='fas fa-cloud'></i>"+ "</div>"+ "<div class='playerData'>"+dataFormated[i].name   +"-"+dataFormated[i].score+"</div>"+ "</li>";
         displayScore.push(dataFormated[i]);
     }
     lengthy();
