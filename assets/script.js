@@ -69,6 +69,10 @@ var goButton = document
 
 var userName = document.getElementById("userName");
 
+var divScore= document.getElementById("currentPlayer");
+
+
+
 function setObject() {
     if (userName.value == "") {
         let errorMesage= document.getElementById("errorMesage");
@@ -78,6 +82,7 @@ function setObject() {
         errorMesage.innerHTML="";
         goscore();
         afterPag();
+        divScore.innerHTML="<p>" + "Current Player:" + User.name + "<p>";
     }
 }
 
@@ -198,6 +203,10 @@ function change() {
     var j = Math.floor(Math.random() * 500) + 1;
     b.style.left = i + "px";
     b.style.top = j + "px";
+    var z = Math.floor(Math.random() * 100) + 1;
+    var k = Math.floor(Math.random() * 100) + 1;
+    b.style.height = z + "px";
+    b.style.width = k + "%";
 }
 
 var startGame2 = document.getElementById("starButton2");

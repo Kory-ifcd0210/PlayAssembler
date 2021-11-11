@@ -48,8 +48,9 @@ h1{
     max-height: 100%;
 }
 .col-right{
-    float: right;
-    width: 30%;
+    float: bottom;
+    width: 80%;
+    height: 80%;
 }
 
 .hidden{
@@ -97,10 +98,15 @@ button{
     margin-top: 5%;
 }
 
+#Go{
+    height: 50px;
+    width: 50%;
+}
 .botonGeneral{
     background-color: var(--black);
     color: var(--white);
     box-shadow: 5px 3px 10px var(--shade);
+   
 }
 
 .botonGeneral:hover{
@@ -120,6 +126,8 @@ button{
 
 #btntest{
     position: relative;
+    min-width: 50px;
+    min-height: 50px;
 }
 
 /*Inputs*/
@@ -225,6 +233,7 @@ input:focus{
     font-weight: bold;
     font-family: impact;
     margin: 10px;
+    background-image: url(/gatopata.png);
 }
 
 
@@ -255,7 +264,7 @@ input:focus{
     width: 350px;
     position: absolute;
     transform: translate(-50%, -50%);
-    left: 50%;
+    left: 46%;
     top: 20%;
 }
 .cat {
@@ -426,4 +435,10 @@ input:focus{
 
 .gameover1div{
     text-align: center;
+}
+
+.indexImg img{
+    max-width: 100px;
+    max-height: 100px;
+    display: ;
 }
