@@ -147,14 +147,11 @@ input:focus{
         animation: change 10s infinite;
         font-weight: bold;
         border-radius: 20px;
-        
         color: azure;
-}
+        margin-bottom: 15%;;
+    }
 
-
-
-#score ul{
-
+    #score ul{
     margin-right: 10%;
     margin-left: 0%;
     
@@ -163,9 +160,9 @@ input:focus{
 #score ul li{
     list-style: none;
     text-align: center;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    font-size: 25px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 20px;
 }
 
 /*Principal page*/
@@ -193,6 +190,10 @@ input:focus{
     border: 1px solid beige;
 }
 
+#errorMesage{
+    color: var(--shade);
+}
+
 /*Game Page*/
 #game1{
     display: flex;
@@ -213,7 +214,6 @@ input:focus{
     font-weight: bold;
     font-family: impact;
     margin: 10px;
-    position: absolute;
 }
 
 

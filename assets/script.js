@@ -35,7 +35,7 @@ function chargeData(){
     for(var i in dataFormated)
     {
         gamers.innerHTML =
-        gamers.innerHTML + "<li>" + dataFormated[i].name   +" "+"-" +" "+ dataFormated[i].score+ "</li>";
+        gamers.innerHTML + "<li>" + dataFormated[i].name   +"-"+dataFormated[i].score+ "</li>";
         displayScore.push(dataFormated[i]);
     }    
     lengthy();
@@ -43,7 +43,7 @@ function chargeData(){
 
 function lengthy (){ 
     displayScore.length = 11;
-}
+    }
 
 
 //localStorage
@@ -71,10 +71,11 @@ var userName = document.getElementById("userName");
 
 function setObject() {
     if (userName.value == "") {
-        alert("Name must be filled out");
-        return false;
+        let errorMesage= document.getElementById("errorMesage");
+        errorMesage.innerHTML="Name must be filled out";
     } else {
         User.name = userName.value;
+        errorMesage.innerHTML="";
         goscore();
         afterPag();
     }
@@ -90,7 +91,7 @@ function handleStartGame(page) {
     page.startGame.classList.add("hidden");
     page.clickGame.classList.remove("hidden");
     //time = setTimeout(gameOver2, 3000); //Temporizador juego
-    time = setTimeout(() => gameOver(page), 5000);
+    time = setTimeout(() => gameOver(page), 2000);
 }
 
 //Pasar de botón Start a botón Click game1
@@ -124,17 +125,17 @@ function gameOver(page) {
 var scoreResult2 = document.getElementById("scoreResult2");
 
 /*Funcion Play Again*/
-var playAgain = document
-    .getElementById("again")
-    .addEventListener("click", () => again(pages.page1));
+// var playAgain = document
+//     .getElementById("again")
+//     .addEventListener("click", () => again(pages.page1));
 
-function again(page) {
-    count = 0;
-    page.clickNum.textContent = count;
-    page.startGame.classList.remove("hidden");
-    page.clickGame.classList.add("hidden");
-    beforePag();
-}
+// function again(page) {
+//     count = 0;
+//     page.clickNum.textContent = count;
+//     page.startGame.classList.remove("hidden");
+//     page.clickGame.classList.add("hidden");
+//     beforePag();
+// }
 
 /*cambio paginas*/
 
@@ -193,22 +194,10 @@ var b = document.getElementById("btntest");
 b.addEventListener("click", change);
 
 function change() {
-    var i = Math.floor(Math.random() * 600) + 1;
-    var j = Math.floor(Math.random() * 400) + 1;
-    var s = Math.floor(Math.random() * 600) + 1;
-    var d = Math.floor(Math.random() * 400) + 1;
+    var i = Math.floor(Math.random() * 500) + 1;
+    var j = Math.floor(Math.random() * 500) + 1;
     b.style.left = i + "px";
     b.style.top = j + "px";
-    b.style.right = s + "px";
-    b.style.bottom = d + "px";
-    var y = Math.floor(Math.random() * 150) + 1;
-    var z = Math.floor(Math.random() * 50) + 1;
-    var u = Math.floor(Math.random() * 150) + 1;
-    var k = Math.floor(Math.random() * 50) + 1;
-    b.style.paddingLeft = y + "px";
-    b.style.paddingTop = z + "px";
-    b.style.paddingRight = u + "px";
-    b.style.paddingBottom = k + "px";
 }
 
 var startGame2 = document.getElementById("starButton2");
@@ -223,9 +212,9 @@ var clickNum2 = document.getElementById("areaContador2");
 clickGame2.addEventListener("click", () => contador(pages.page2));
 
 /*Funcion Play Again2*/
-var playAgain2 = document
-    .getElementById("again2")
-    .addEventListener("click", () => again(pages.page2));
+// var playAgain2 = document
+//     .getElementById("again2")
+//     .addEventListener("click", () => again(pages.page2));
 
 //boton exit
 var Exit= document.getElementById("exit").addEventListener("click", exit);
