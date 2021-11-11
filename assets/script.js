@@ -35,16 +35,10 @@ function chargeData(){
     for(var i in dataFormated)
     {
         gamers.innerHTML =
-        gamers.innerHTML + "<li>" + dataFormated[i].name   +" "+"-" +" "+ dataFormated[i].score+ "</li>";
+        gamers.innerHTML + "<li>" + dataFormated[i].name   +"-"+dataFormated[i].score+ "</li>";
         displayScore.push(dataFormated[i]);
     }
-    lengthy();
 }
-
-function lengthy (){
-    displayScore.length = 12;
-}
-
 
 //localStorage
 let displayScore = [];
@@ -90,7 +84,7 @@ function handleStartGame(page) {
     page.startGame.classList.add("hidden");
     page.clickGame.classList.remove("hidden");
     //time = setTimeout(gameOver2, 3000); //Temporizador juego
-    time = setTimeout(() => gameOver(page), 5000);
+    time = setTimeout(() => gameOver(page), 2000);
 }
 
 //Pasar de botón Start a botón Click game1
@@ -193,22 +187,10 @@ var b = document.getElementById("btntest");
 b.addEventListener("click", change);
 
 function change() {
-    var i = Math.floor(Math.random() * 600) + 1;
-    var j = Math.floor(Math.random() * 400) + 1;
-    var s = Math.floor(Math.random() * 600) + 1;
-    var d = Math.floor(Math.random() * 400) + 1;
+    var i = Math.floor(Math.random() * 500) + 1;
+    var j = Math.floor(Math.random() * 500) + 1;
     b.style.left = i + "px";
     b.style.top = j + "px";
-    b.style.right = s + "px";
-    b.style.bottom = d + "px";
-    var y = Math.floor(Math.random() * 150) + 1;
-    var z = Math.floor(Math.random() * 50) + 1;
-    var u = Math.floor(Math.random() * 150) + 1;
-    var k = Math.floor(Math.random() * 50) + 1;
-    b.style.paddingLeft = y + "px";
-    b.style.paddingTop = z + "px";
-    b.style.paddingRight = u + "px";
-    b.style.paddingBottom = k + "px";
 }
 
 var startGame2 = document.getElementById("starButton2");
