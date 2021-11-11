@@ -14,6 +14,7 @@ body{
     padding: 0;
     max-width: 100%;
     overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
 }
 
 html, body {
@@ -130,6 +131,11 @@ input:focus{
     width: 20%;
     text-align: center;
     height: 100vh;
+<<<<<<< HEAD
+=======
+    font-family: 'Open Sans', sans-serif;
+    
+>>>>>>> bbfc95b3b63fbe6cd9802a3f2047a84729125d0d
 }
 
     @keyframes change {
@@ -144,8 +150,7 @@ input:focus{
         animation: change 10s infinite;
         font-weight: bold;
         border-radius: 20px;
-        max-width: 60%;
-        max-width: 60%;
+        
         color: azure;
 }
 
@@ -178,6 +183,7 @@ input:focus{
     align-items: center;
     flex-direction: column;
     width: 40%;
+    border: 2px solid #fdc5c8ff;
 }
 
 .indexImg{
@@ -217,4 +223,12 @@ input:focus{
     text-align: center;
     height: 100vh;
     list-style: none;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+
+#username{
+    border-top: 10%;
 }
