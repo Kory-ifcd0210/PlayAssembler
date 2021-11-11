@@ -37,8 +37,14 @@ function chargeData(){
         gamers.innerHTML =
         gamers.innerHTML + "<li>" + dataFormated[i].name   +"-"+dataFormated[i].score+ "</li>";
         displayScore.push(dataFormated[i]);
-    }
+    }    
+    lengthy();
 }
+
+function lengthy (){ 
+    displayScore.length = 11;
+    }
+
 
 //localStorage
 let displayScore = [];
