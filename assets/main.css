@@ -28,9 +28,18 @@ main {
     padding-left: 142px;
     padding-right: 142px;
 }*/
+h1{
+    font-size: 30px;
+    margin:0;
+}
 .japo{
+    font-size: 18px;
+    color: var(--shade);
+}
+.japo h1{
     color: var(--white);
 }
+
 .col-left{
     float: left;
     width: 30%;
@@ -85,6 +94,7 @@ button{
     border-radius: 20px;
     padding: 5px 20px;
     text-align: center;
+    margin-top: 5%;
 }
 
 .botonGeneral{
@@ -98,7 +108,7 @@ button{
 }
 
 .botonGeneral:active{
-    background-color: var(--white);
+    background-color: var(--complementary);
 }
 
 .buttonGame{
@@ -112,18 +122,11 @@ button{
     position: relative;
 }
 
-#go {
-    background-image: url(img\paw.jpg);
-}
-
 /*Inputs*/
 input{
     border-radius: 20px;
     text-align: center;
-    font-family: 'FontAwesome';
-}
-input[type="text"] {
-    position: relative;
+    font-weight: bold;
 }
 
 input:hover{
@@ -131,7 +134,7 @@ input:hover{
 }
 
 input:focus{
-    border-color: var(--black);
+    border-color: var(--shade);
 }
 
 /*Score Style*/
@@ -142,7 +145,6 @@ input:focus{
     text-align: center;
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
-    
 }
 
     @keyframes change {
@@ -158,7 +160,7 @@ input:focus{
         font-weight: bold;
         border-radius: 20px;
         color: azure;
-        margin-bottom: 15%;;
+        margin-bottom: 15%;
     }
 
     #score ul{
