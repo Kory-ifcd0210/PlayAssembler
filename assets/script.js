@@ -65,6 +65,8 @@ var userName = document.getElementById("userName");
 
 function setObject() {
     if (userName.value == "") {
+        let validation= document.querySelector(".userStart");
+
         alert("Name must be filled out");
         return false;
     } else {
@@ -118,17 +120,17 @@ function gameOver(page) {
 var scoreResult2 = document.getElementById("scoreResult2");
 
 /*Funcion Play Again*/
-var playAgain = document
-    .getElementById("again")
-    .addEventListener("click", () => again(pages.page1));
+// var playAgain = document
+//     .getElementById("again")
+//     .addEventListener("click", () => again(pages.page1));
 
-function again(page) {
-    count = 0;
-    page.clickNum.textContent = count;
-    page.startGame.classList.remove("hidden");
-    page.clickGame.classList.add("hidden");
-    beforePag();
-}
+// function again(page) {
+//     count = 0;
+//     page.clickNum.textContent = count;
+//     page.startGame.classList.remove("hidden");
+//     page.clickGame.classList.add("hidden");
+//     beforePag();
+// }
 
 /*cambio paginas*/
 
@@ -205,9 +207,9 @@ var clickNum2 = document.getElementById("areaContador2");
 clickGame2.addEventListener("click", () => contador(pages.page2));
 
 /*Funcion Play Again2*/
-var playAgain2 = document
-    .getElementById("again2")
-    .addEventListener("click", () => again(pages.page2));
+// var playAgain2 = document
+//     .getElementById("again2")
+//     .addEventListener("click", () => again(pages.page2));
 
 //boton exit
 var Exit= document.getElementById("exit").addEventListener("click", exit);
