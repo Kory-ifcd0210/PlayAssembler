@@ -35,7 +35,7 @@ function chargeData(){
     for(var i in dataFormated)
     {
         gamers.innerHTML =
-        gamers.innerHTML + "<li>" +"<div class='icon'>" + "<i class='fas fa-cloud'></i>"+ "</div>"+ "<div class='playerData'>"+dataFormated[i].name   +"-"+dataFormated[i].score+"</div>"+ "</li>";
+        gamers.innerHTML + "<li>" +dataFormated[i].name   +" - "+dataFormated[i].score+ "</li>";
         displayScore.push(dataFormated[i]);
     }
     lengthy();
@@ -82,7 +82,7 @@ function setObject() {
         errorMesage.innerHTML="";
         goscore();
         afterPag();
-        divScore.innerHTML="<p>" + "Current Player:" + User.name + "<p>";
+        divScore.innerHTML="<p>" + "Current Player : "+ User.name + "<p>";
     }
 }
 
