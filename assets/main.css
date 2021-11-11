@@ -157,7 +157,6 @@ input:focus{
     #score ul{
     margin-right: 10%;
     margin-left: 0%;
-    
 }
 
 #score ul li{
@@ -185,7 +184,7 @@ input:focus{
 }
 
 .indexImg{
-    width: 100%;
+    width: 50%;
     object-fit: contain;
 }
 
