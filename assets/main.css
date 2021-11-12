@@ -157,10 +157,12 @@ input:focus{
 
 .icon{
     float: left;
-    width: 20%;
+    text-align: center;
 }
 
 .playerData{
+    margin:0;
+    text-align: center;
 }
 
 #score ul li:first-child {

@@ -35,7 +35,7 @@ function chargeData(){
     for(var i in dataFormated)
     {
         gamers.innerHTML =
-        gamers.innerHTML + "<li>" +"<div class='icon'>" + "<i class='fas fa-cloud'></i>"+ "</div>"+ "<div class='playerData'>"+dataFormated[i].name   +"-"+dataFormated[i].score+"</div>"+ "</li>";
+        gamers.innerHTML + "<li>" +"<div class='icon'>" + "<i class='fas fa-paw'></i>"+ "</div>"+ "<div class='playerData'>"+dataFormated[i].name   +"-"+dataFormated[i].score+"</div>"+ "</li>";
         displayScore.push(dataFormated[i]);
     }
     lengthy();
@@ -68,6 +68,7 @@ var goButton = document
     .addEventListener("click", setObject);
 
 var userName = document.getElementById("userName");
+var divScore= document.getElementById("currentPlayer");
 
 function setObject() {
     if (userName.value == "") {
@@ -75,9 +76,9 @@ function setObject() {
         errorMesage.innerHTML="Name must be filled out";
     } else {
         User.name = userName.value;
-        errorMesage.innerHTML="";
         goscore();
         afterPag();
+       // divScore.innerHTML="<p>" + "Current Player:" + User.name + "<p>";
     }
 }
 
