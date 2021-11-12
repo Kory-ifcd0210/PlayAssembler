@@ -29,7 +29,7 @@ main {
     padding-right: 142px;
 }*/
 h1{
-    font-size: 30px;
+    font-size: 50px;
     margin:0;
 }
 .japo{
@@ -43,13 +43,21 @@ h1{
 .col-left{
     float: left;
     width: 30%;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    max-height: 100%;
+
 }
 .col-right{
     float: right;
-    width: 30%;
+    width: 70%;
+    
+    
+}
+
+.patagatogato{
+    background-image: url(../assets/img/gatopata.png);
+    padding: 300px ;
+    margin:100px;
+    background-position: center;
+
 }
 
 .hidden{
@@ -64,6 +72,8 @@ h1{
     background-color: #FFF;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .pages .page {
     display: none;
@@ -97,10 +107,15 @@ button{
     margin-top: 5%;
 }
 
+#Go{
+    height: 50px;
+    width: 50%;
+}
 .botonGeneral{
     background-color: var(--black);
     color: var(--white);
     box-shadow: 5px 3px 10px var(--shade);
+   
 }
 
 .botonGeneral:hover{
@@ -120,6 +135,8 @@ button{
 
 #btntest{
     position: relative;
+    min-width: 50px;
+    min-height: 50px;
 }
 
 /*Inputs*/
@@ -127,6 +144,8 @@ input{
     border-radius: 20px;
     text-align: center;
     font-weight: bold;
+    height: 25px;
+    
 }
 
 input:hover{
@@ -143,8 +162,12 @@ input:focus{
     background-color: #fafafa;
     width: 20%;
     text-align: center;
-    height: 100vh;
-    font-family: 'Open Sans', sans-serif;
+    height: 92vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    margin-left: 3vh;
+    border-radius: 20px;
+    padding-top: 1.5vh;
 }
 
     @keyframes change {
@@ -160,10 +183,6 @@ input:focus{
     text-align: center;
 }
 
-.playerData{
-    margin:0;
-    text-align: center;
-}
 
 #score ul li:first-child {
         animation: change 10s infinite;
@@ -184,12 +203,13 @@ input:focus{
     margin-top: 5%;
     margin-bottom: 5%;
     font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /*Principal page*/
 #player {
     display: flex;
-    height: 500px;
+    height: 100vh;
     text-align: center;
     align-items: center;
 }
@@ -203,8 +223,9 @@ input:focus{
 }
 
 .indexImg{
-    width: 50%;
-    object-fit: contain;
+    width: 80vh;
+    border-bottom: 3vh;
+    
 }
 
 .userStart{
@@ -222,19 +243,17 @@ input:focus{
     align-items: center;
 }
 
-#displayCats{
-    width: 30%;
+#areaContador {
+    background-image: url(../assets/img/gatopata.png);
 }
 
-#displayCats img{
-    width: 100%;
-}
 
 .displayClickCount {
     font-size: 40px;
     font-weight: bold;
     font-family: impact;
     margin: 10px;
+    
 }
 
 
@@ -244,9 +263,7 @@ input:focus{
     list-style: none;
 }
 
-::-webkit-input-placeholder {
-    text-align: center;
- }
+
 
 #username{
     border-top: 10%;
@@ -266,6 +283,7 @@ input:focus{
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
+    right: 50%;
     top: 20%;
 }
 .cat {
@@ -435,4 +453,15 @@ input:focus{
 
 .gameover1div{
     text-align: center;
+}
+
+.gatopata{
+    width: 400px;
+    height: 400px;
+}
+
+.muchosgatos img{
+
+    height: 99vh;
+
 }

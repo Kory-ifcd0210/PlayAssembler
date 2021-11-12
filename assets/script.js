@@ -35,7 +35,7 @@ function chargeData(){
     for(var i in dataFormated)
     {
         gamers.innerHTML =
-        gamers.innerHTML + "<li>" +"<div class='icon'>" + "<i class='fas fa-paw'></i>"+ "</div>"+ "<div class='playerData'>"+dataFormated[i].name   +"-"+dataFormated[i].score+"</div>"+ "</li>";
+        gamers.innerHTML + "<li>" +dataFormated[i].name   +" - "+dataFormated[i].score+ "</li>";
         displayScore.push(dataFormated[i]);
     }
     lengthy();
@@ -70,6 +70,10 @@ var goButton = document
 var userName = document.getElementById("userName");
 var divScore= document.getElementById("currentPlayer");
 
+var divScore= document.getElementById("currentPlayer");
+
+
+
 function setObject() {
     if (userName.value == "") {
         let errorMesage= document.getElementById("errorMesage");
@@ -78,7 +82,7 @@ function setObject() {
         User.name = userName.value;
         goscore();
         afterPag();
-       // divScore.innerHTML="<p>" + "Current Player:" + User.name + "<p>";
+        divScore.innerHTML="<p>" + "Current Player : "+ User.name + "<p>";
     }
 }
 
@@ -199,6 +203,10 @@ function change() {
     var j = Math.floor(Math.random() * 500) + 1;
     b.style.left = i + "px";
     b.style.top = j + "px";
+    var z = Math.floor(Math.random() * 100) + 1;
+    var k = Math.floor(Math.random() * 100) + 1;
+    b.style.height = z + "px";
+    b.style.width = k + "%";
 }
 
 var startGame2 = document.getElementById("starButton2");
@@ -212,10 +220,6 @@ startGame2.onclick = function () {
 var clickNum2 = document.getElementById("areaContador2");
 clickGame2.addEventListener("click", () => contador(pages.page2));
 
-/*Funcion Play Again2*/
-// var playAgain2 = document
-//     .getElementById("again2")
-//     .addEventListener("click", () => again(pages.page2));
 
 //boton exit
 var Exit= document.getElementById("exit").addEventListener("click", exit);
