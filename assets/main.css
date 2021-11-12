@@ -47,9 +47,8 @@ h1{
 }
 .col-right{
     float: right;
-    width: 70%;
-    
-    
+    width: 30%;
+
 }
 
 .patagatogato{
@@ -461,7 +460,5 @@ input:focus{
 }
 
 .muchosgatos img{
-
     height: 99vh;
-
 }
