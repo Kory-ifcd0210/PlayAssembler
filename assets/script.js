@@ -50,6 +50,7 @@ function lengthy (){
 let displayScore = [];
 
 let objStorage = window.localStorage;
+
 function againagain() {
     if(displayScore.filter(x=> x.name ==User.name && x.score == User.score).length <1)
     {
