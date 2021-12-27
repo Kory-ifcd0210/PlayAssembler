@@ -23,27 +23,35 @@ const User = {
 window.onload =chargeData;
 
 function chargeData(){
-    displayScore= [];
     let objStorage = window.localStorage;
     var data=objStorage.getItem('objectinArray');
+    if (data==null){
+        return;
+    }
     var dataFormated=JSON.parse(data);
     var gamers = document.getElementById("ulScore");
     gamers.innerHTML = "";
     dataFormated.sort(function(a,b){
         return b.score-a.score;
     });
+
+    lengthy();
+
     for(var i in dataFormated)
     {
         gamers.innerHTML =
         gamers.innerHTML + "<li>" +dataFormated[i].name   +" - "+dataFormated[i].score+ "</li>";
-        displayScore.push(dataFormated[i]);
+        if(displayScore.filter(x=> x.name==dataFormated[i].name && x.score==dataFormated[i].score).length==0){
+            displayScore.push(dataFormated[i]);
+        }
     }
-    lengthy();
 }
 
 function lengthy (){
-    displayScore.length = 11;
+    if(displayScore.length>15){
+        displayScore.pop();
     }
+}
 
 
 //localStorage
@@ -55,6 +63,10 @@ function againagain() {
     if(displayScore.filter(x=> x.name ==User.name && x.score == User.score).length <1)
     {
         displayScore.push(User);
+        displayScore.sort(function(a,b){
+            return b.score-a.score;
+        });
+        lengthy();
     }
     let objectInArray = JSON.stringify(displayScore);
     objStorage.setItem("objectinArray", objectInArray);
